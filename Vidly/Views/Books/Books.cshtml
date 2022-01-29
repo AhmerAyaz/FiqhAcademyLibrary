@@ -1,0 +1,2086 @@
+﻿@model Vidly.ViewModels.Index
+
+
+
+
+
+        <main role="main">
+
+            <!-- BEGIN content_for_index --><div id="shopify-section-1532167101833" class="shopify-section">
+                <!-- Start Slider area -->
+                <div class="slider-area brown__nav slider--15 slide__activation slide__arrow01 owl-carousel owl-theme">
+
+
+                    <!-- Start Single Slide -->
+                    <div class="slide animation__style10 fullscreen align__center--left bg_nr_ccc" style="background-image:url(../../Content/cdn.shopify.com/s/files/1/0014/4880/4425/files/slider2.jpg
+                                                                              );">
+                        <div class="container">
+                            <div class="row">
+                                <div class="col-lg-12">
+                                    <div class="slider__content">
+                                        <div class="contentbox">
+
+
+                                            <h2>
+                                                Buy <span>your </span>favourite <span>Book </span>from <span>Here </span>
+                                            </h2>
+
+
+
+                                            <a class="shopbtn" href="/Books/List">SHOP NOW</a>
+
+
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- End Single Slide -->
+                    <!-- Start Single Slide -->
+                    <div class="slide animation__style10 fullscreen align__center--left bg_nr_ccc" style="background-image:url(../../Content/cdn.shopify.com/s/files/1/0014/4880/4425/files/slider3.jpg
+                                                                              );">
+                        <div class="container">
+                            <div class="row">
+                                <div class="col-lg-12">
+                                    <div class="slider__content">
+                                        <div class="contentbox">
+
+
+                                            <h2>
+                                                Buy <span>your </span>favourite <span>Book </span>from <span>Here </span>
+                                            </h2>
+
+
+
+                                            <a class="shopbtn" href="#">SHOP NOW</a>
+
+
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- End Single Slide -->
+
+
+                </div>
+                <!-- End Slider area -->
+
+
+
+
+
+            </div><div id="shopify-section-1532170298963" class="shopify-section">
+                <!-- Start BEst Seller Area -->
+                <section class="wn__product__area brown--color" style="padding-top:86px;padding-bottom:60px;">
+                    <div class="container">
+                        <div class="row">
+                            <div class="col-lg-12">
+
+
+                                <!--Section Title Start-->
+                                <div class="section__title text-center">
+
+
+                                    <h2 class="title__be--2">
+                                        New <span>Products</span></h3>
+
+
+
+                                        <!--<p>There are many variations of passages of Lorem Ipsum available, but the majority have suffered duskam alteration variations of passages</p>
+        -->
+
+                                </div>
+                                <!--Section Title End-->
+
+
+                            </div>
+                        </div>
+                        <!-- Start Single Tab Content -->
+                        <div class="furniture--4 border--round arrows_style owl-carousel owl-theme row mt--50">
+
+
+
+
+
+
+
+                            @foreach (var book in Model.Latest)
+                            {
+                                <!-- Start Single Product -->
+                                <div class="product product__style--3">
+                                    <div class="col-lg-3 col-md-4 col-sm-6 col-12">
+
+
+
+
+
+
+
+
+
+
+
+
+                                        <div class="product__thumb">
+
+
+                                            <a class="first__img" href="/Books/Details?Id=@book.Id&set=1"><img alt="" src="~/Content/cdn.shopify.com/s/files/1/0014/4880/4425/files/slider3.jpg"><div class="centered-text" style="width: 239px;">@book.Name</div></a>
+
+                                            <a class="second__img animation1" href="/Books/Details?Id=@book.Id&set=1"><img alt="" src="~/Content/cdn.shopify.com/s/files/1/0014/4880/4425/files/slider4.png"><div class="centered-text" style="color:black;">@book.Author</div></a>
+
+
+
+
+                                            <!--
+
+                                                <div class="hot__box">
+                                                    <span class="hot-label">27 % Off</span>
+
+                                                </div>
+    -->
+
+
+
+                                        </div>
+
+                                        <div class="product__content content--center">
+                                            <h4><a class="Amiri" style="direction: rtl;" href="javascript:void(0);">@book.Name</a></h4>
+                                            
+                                            
+                                            <ul class="prize d-flex">
+
+
+                                                <li><span class=money>@book.Genre.Name</span></li>
+                                                <!--<li class="old_prize"><span class=money>$600.00</span></li>-->
+
+
+
+                                            </ul>
+    
+
+                                            <div class="action">
+                                                <div class="actions_inner">
+                                                    <ul style="height:25px;" class="add_to_links">
+                                                        <li class="Amiri">@book.Publisher</li>
+
+                                                        <!-- @@for (int i = 1; i <= book.Set; i++)
+    {
+    @@Html.ActionLink(@@i.ToString(), "Details", "Books", new { name = book.Name, set = i }, new { style = "padding-right: 5px;" })
+    if (i % 10 == 0)
+    {
+    <br />
+                                                       }
+                                                       }-->
+                                                        <!--
+
+
+
+
+    <li>
+        <a class="action-cart add_cart cart-item cart" title="Add to Cart" href="https://affiliate-program.amazon.com/">
+            <i class="bi bi-shopping-bag4"></i>
+        </a>
+    </li>
+
+
+    <li>
+        <a class="" href="account/login.html" title="Wishlist">
+            <i class="bi bi-heart-beat"></i>
+        </a>
+    </li>
+    <li>
+        <a href="#" class="compare" data-pid="affiliate-product" title="" data-original-title="Compare">
+            <i class="bi bi-compass"></i>
+        </a>
+    </li>
+    <li>
+        <a data-toggle="modal" data-target="#exampleModal" title="Quick View"
+           class="quickview modal-view detail-link" href="javascript:void(0);"
+           onclick="quiqview('affiliate-product')">
+            <i class="bi bi-search"></i>
+        </a>
+    </li>
+    -->
+
+                                                    </ul>
+                                                </div>
+                                            </div>
+
+                                            <!--<div class="product__hover--content">
+
+        <ul class="rating d-flex spr-badge-caption-none">
+            <span class="shopify-product-reviews-badge" data-id="1323780964425"></span>
+        </ul>
+
+    </div>-->
+
+                                        </div>
+
+
+
+
+
+                                    </div>
+                                </div>
+                                <!-- Start Single Product -->
+                            }
+
+
+
+
+                        </div>
+                        <!-- End Single Tab Content -->
+                    </div>
+                </section>
+                <!-- Start BEst Seller Area -->
+
+
+
+                <script>
+
+
+                    /*=============  Product Activation  ==============*/
+                    $('.furniture--4').owlCarousel({
+                        loop: true,
+                        margin: 0,
+                        nav: true,
+                        autoplay: false,
+                        autoplayTimeout: 10000,
+                        items: 4,
+                        navText: ['<i class="zmdi zmdi-chevron-left"></i>', '<i class="zmdi zmdi-chevron-right"></i>'],
+                        dots: false,
+                        lazyLoad: true,
+                        responsive: {
+                            0: {
+                                items: 1
+                            },
+                            576: {
+                                items: 2
+                            },
+                            768: {
+                                items: 3
+                            },
+                            992: {
+                                items: 4
+                            },
+                            1920: {
+                                items: 4
+                            }
+                        }
+                    });
+
+
+
+                </script>
+
+
+
+
+
+
+
+            </div><div id="shopify-section-1532235018679" class="shopify-section">
+                <!-- Start NEwsletter Area -->
+                <section class="wn__newsletter__area bg-image--2 rel-area" style="background-image:url(//cdn.shopify.com/s/files/1/0014/4880/4425/files/2.jpg?v=1532235041
+                                                                              );">
+
+
+
+                    <div class="container">
+                        <div class="row">
+                            <div class="col-lg-7 offset-lg-5 col-md-12 col-12 ptb--150">
+                                <div class="section__title text-center">
+
+
+                                    <h2>
+                                        Stay With Us
+                                    </h2>
+
+
+                                </div>
+                                <div class="newsletter__block text-center">
+
+
+                                    <p> Subscribe to our newsletters now and stay up-to-date with new collections, the latest lookbooks and exclusive offers. </p>
+
+
+                                    <form action="http://devitems.us11.list-manage.com/subscribe/post?u=6bbb9b6f5827bd842d9640c82&amp;id=05d85f18ef" method="post" id="mc-embedded-subscribe-form" name="mc-embedded-subscribe-form" class="validate" novalidate>
+                                        <div class="newsletter__box">
+                                            <input type="email" value="" name="EMAIL" class="email" placeholder="Your email address" required>
+                                            <button type="submit">Subscribe</button>
+                                        </div>
+                                    </form>
+
+
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+                <!-- End NEwsletter Area -->
+
+
+
+
+
+                <style>
+                </style>
+
+
+
+
+
+
+
+
+            </div><div id="shopify-section-1532238989196" class="shopify-section">
+                <!-- Start Best Seller Area -->
+                <section class="wn__bestseller__area bg--white pt--80  pb--30">
+                    <div class="container">
+                        <div class="row">
+                            <div class="col-lg-12">
+
+                                <!--Section Title Start-->
+                                <div class="section__title text-center">
+
+
+                                    <h2 class="title__be--2">
+                                        All <span>Products</span></h3>
+
+
+
+                                        <!--<p>There are many variations of passages of Lorem Ipsum available, but the majority have suffered duskam alteration variations of passages</p>
+        -->
+
+                                </div>
+                                <!--Section Title End-->
+
+                            </div>
+                        </div>
+                        <div class="row mt--30">
+                            <div class="col-md-12 col-lg-12 col-sm-12">
+                                <div class="product__nav nav justify-content-center" role="tablist">
+
+
+
+
+                                    <a class="Amiri nav-item nav-link " href="#cook" data-toggle="tab" role="tab" aria-selected="true" aria-controls="cook">
+                                        تاریخ
+                                    </a>
+
+                                    <a class="Amiri nav-item nav-link " href="#children" data-toggle="tab" role="tab" aria-selected="true" aria-controls="children">
+                                        فقھ
+                                    </a>
+                                    
+                                    <a class="Amiri nav-item nav-link " href="#biographic" data-toggle="tab" role="tab" aria-selected="true" aria-controls="biographic">
+                                        حدیث
+                                    </a>
+
+                                    <a class="Amiri nav-item nav-link active" href="#adventure" data-toggle="tab" role="tab" aria-selected="true" aria-controls="adventure">
+                                        تفاسیر
+                                    </a>
+
+
+
+                                </div>
+                            </div>
+                        </div>
+                        <div class="tab__container mt--40">
+
+
+
+
+
+
+                            <!-- Start Single Tab Content -->
+                            <div class="row single__tab tab-pane fade show active" id="adventure" role="tabpanel">
+                                <div class="product__indicator--4 arrows_style owl-carousel owl-theme">
+
+
+
+
+
+                                    @for (var i = 0; i < Model.Category1.Count(); i++)
+                                    {
+                                        <div class="single__product">
+
+
+                                            <div class="col-lg-3 col-md-4 col-sm-6 col-12">
+                                                <div class="product product__style--3">
+
+
+
+
+
+
+
+
+
+
+
+                                                    <div class="product__thumb">
+
+
+                                                        <a class="first__img" href="/Books/Details?Id=@Model.Category1[i].Id&set=1"><img alt="" src="~/Content/cdn.shopify.com/s/files/1/0014/4880/4425/files/slider3.jpg"><div class="centered-text" style="width:239px;">@Model.Category1[i].Name</div></a>
+
+                                                        <a class="second__img animation1" href="/Books/Details?Id=@Model.Category1[i].Id&set=1"><img alt="" src="~/Content/cdn.shopify.com/s/files/1/0014/4880/4425/files/slider4.png"><div class="centered-text" style="color:black;">@Model.Category1[i].Author</div></a>
+
+
+
+
+
+                                                        <!--
+    <div class="hot__box">
+        <span class="hot-label">27 % Off</span>
+
+    </div>-->
+
+
+
+
+                                                    </div>
+
+                                                    <div class="product__content content--center">
+                                                        <h4><a class="Amiri" style="direction: rtl;" href="products/affiliate-product.html">@Model.Category1[i].Name</a></h4>
+
+
+                                                        <ul class="prize d-flex">
+
+
+                                                            <li><span class=money>@Model.Category1[i].Genre.Name</span></li>
+
+
+
+                                                        </ul>
+
+
+                                                        <div class="action">
+                                                            <div class="actions_inner">
+                                                                <ul style="height:25px;" class="add_to_links">
+
+
+                                                                    <li class="Amiri">@Model.Category1[i].Publisher</li>
+
+                                                                </ul>
+                                                            </div>
+                                                        </div>
+
+                                                        <!--<div class="product__hover--content">
+
+        <ul class="rating d-flex spr-badge-caption-none">
+            <span class="shopify-product-reviews-badge" data-id="1323780964425"></span>
+        </ul>
+
+    </div>-->
+
+                                                    </div>
+
+
+
+
+                                                </div>
+                                            </div>
+
+
+
+
+
+
+
+
+
+
+
+
+                                            <div class="col-lg-3 col-md-4 col-sm-6 col-12">
+                                                <div class="product product__style--3">
+
+
+
+
+
+
+
+
+
+
+
+                                                    <div class="product__thumb">
+
+                                                        <a class="first__img" href="/Books/Details?Id=@Model.Category1[i].Id&set=1"><img alt="" src="~/Content/cdn.shopify.com/s/files/1/0014/4880/4425/files/slider3.jpg"><div class="centered-text" style="width:239px;">@Model.Category1[++i].Name</div></a>
+
+                                                        <a class="second__img animation1" href="/Books/Details?Id=@Model.Category1[i].Id&set=1"><img alt="" src="~/Content/cdn.shopify.com/s/files/1/0014/4880/4425/files/slider4.png"><div class="centered-text" style="color:black;">@Model.Category1[i].Author</div></a>
+
+
+
+
+
+                                                    
+
+
+
+
+                                                    </div>
+
+                                                    <div class="product__content content--center">
+                                                        <h4><a class="Amiri" style="direction: rtl;" href="products/algunas-veces-por.html">@Model.Category1[i].Name</a></h4>
+
+
+                                                        <ul class="prize d-flex">
+
+
+                                                            <li><span class=money>@Model.Category1[i].Genre.Name</span></li>
+
+
+
+                                                        </ul>
+
+
+                                                        <div class="action">
+                                                            <div class="actions_inner">
+                                                                <ul style="height:25px;" class="add_to_links">
+
+
+                                                                    <ul style="height:25px;" class="add_to_links">
+
+
+                                                                        <li class="Amiri">@Model.Category1[i].Publisher</li>
+
+                                                                    </ul>
+
+                                                                </ul>
+                                                            </div>
+                                                        </div>
+
+                                                        <!--<div class="product__hover--content">
+
+        <ul class="rating d-flex spr-badge-caption-none">
+            <span class="shopify-product-reviews-badge" data-id="1323780964425"></span>
+        </ul>
+
+    </div>-->
+
+                                                    </div>
+
+
+
+
+                                                </div>
+                                            </div>
+
+
+
+                                        </div>
+                                    }
+
+
+
+
+
+
+                                </div>
+                            </div>
+                            <!-- End Single Tab Content -->
+                            <!-- Start Single Tab Content -->
+                            <div class="row single__tab tab-pane fade " id="biographic" role="tabpanel">
+                                <div class="product__indicator--4 arrows_style owl-carousel owl-theme">
+
+
+
+
+
+
+
+
+
+
+
+                                    @for (var i = 0; i < Model.Category2.Count(); i++)
+                                    {
+                                        <div class="single__product">
+
+
+                                            <div class="col-lg-3 col-md-4 col-sm-6 col-12">
+                                                <div class="product product__style--3">
+
+
+
+
+
+
+
+
+
+
+
+                                                    <div class="product__thumb">
+
+
+                                                        <a class="first__img" href="/Books/Details?Id=@Model.Category2[i].Id&set=1"><img alt="" src="~/Content/cdn.shopify.com/s/files/1/0014/4880/4425/files/slider3.jpg"><div class="centered-text"  style="width:239px;">@Model.Category2[i].Name</div></a>
+
+                                                        <a class="second__img animation1" href="/Books/Details?Id=@Model.Category2[i].Id&set=1"><img alt="" src="~/Content/cdn.shopify.com/s/files/1/0014/4880/4425/files/slider4.png"><div class="centered-text" style="color:black;">@Model.Category2[i].Author</div></a>
+
+
+
+
+                                                       
+
+
+
+
+                                                    </div>
+
+                                                    <div class="product__content content--center">
+                                                        <h4><a class="Amiri" style="direction: rtl;" href="products/affiliate-product.html">@Model.Category2[i].Name</a></h4>
+
+
+                                                        <ul class="prize d-flex">
+
+
+                                                            <li><span class=money>@Model.Category2[i].Genre.Name</span></li>
+
+
+
+                                                        </ul>
+
+
+                                                        <div class="action">
+                                                            <div class="actions_inner">
+                                                                <ul style="height:25px;" class="add_to_links">
+
+
+                                                                    <ul style="height:25px;" class="add_to_links">
+
+
+                                                                        <li class="Amiri">@Model.Category2[i].Publisher</li>
+
+                                                                    </ul>
+
+                                                                </ul>
+                                                            </div>
+                                                        </div>
+
+                                                        <!--<div class="product__hover--content">
+
+        <ul class="rating d-flex spr-badge-caption-none">
+            <span class="shopify-product-reviews-badge" data-id="1323780964425"></span>
+        </ul>
+
+    </div>-->
+
+                                                    </div>
+
+
+
+
+                                                </div>
+                                            </div>
+
+
+
+
+
+
+
+
+
+
+
+
+                                            <div class="col-lg-3 col-md-4 col-sm-6 col-12">
+                                                <div class="product product__style--3">
+
+
+
+
+
+
+
+
+
+
+
+                                                    <div class="product__thumb">
+
+
+                                                        <a class="first__img" href="/Books/Details?Id=@Model.Category2[i].Id&set=1"><img alt="" src="~/Content/cdn.shopify.com/s/files/1/0014/4880/4425/files/slider3.jpg"><div class="centered-text" style="width:239px;">@Model.Category2[++i].Name</div></a>
+
+                                                        <a class="second__img animation1" href="/Books/Details?Id=@Model.Category2[i].Id&set=1"><img alt="" src="~/Content/cdn.shopify.com/s/files/1/0014/4880/4425/files/slider4.png"><div class="centered-text" style="color:black;">@Model.Category2[i].Author</div></a>
+
+
+
+                                                        
+
+
+
+
+                                                    </div>
+
+                                                    <div class="product__content content--center">
+                                                        <h4><a class="Amiri" style="direction: rtl;" href="products/algunas-veces-por.html">@Model.Category2[i].Name</a></h4>
+
+
+                                                        <ul class="prize d-flex">
+
+
+                                                            <li><span class=money>@Model.Category2[i].Genre.Name</span></li>
+
+
+
+                                                        </ul>
+
+
+                                                        <div class="action">
+                                                            <div class="actions_inner">
+                                                                <ul style="height:25px;" class="add_to_links">
+
+
+                                                                    <ul style="height:25px;" class="add_to_links">
+
+
+                                                                        <li class="Amiri">@Model.Category2[i].Publisher</li>
+
+                                                                    </ul>
+
+                                                                </ul>
+                                                            </div>
+                                                        </div>
+
+                                                        <!--<div class="product__hover--content">
+
+        <ul class="rating d-flex spr-badge-caption-none">
+            <span class="shopify-product-reviews-badge" data-id="1323780964425"></span>
+        </ul>
+
+    </div>-->
+
+                                                    </div>
+
+
+
+
+                                                </div>
+                                            </div>
+
+
+
+                                        </div>
+                                    }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+                                </div>
+                            </div>
+                            <!-- End Single Tab Content -->
+                            <!-- Start Single Tab Content -->
+                            <div class="row single__tab tab-pane fade " id="children" role="tabpanel">
+                                <div class="product__indicator--4 arrows_style owl-carousel owl-theme">
+
+
+
+
+
+
+
+                                    @for (var i = 0; i < Model.Category3.Count(); i++)
+                                    {
+                                        <div class="single__product">
+
+
+                                            <div class="col-lg-3 col-md-4 col-sm-6 col-12">
+                                                <div class="product product__style--3">
+
+
+
+
+
+
+
+
+
+
+
+                                                    <div class="product__thumb">
+
+
+                                                        <a class="first__img" href="/Books/Details?Id=@Model.Category3[i].Id&set=1"><img alt="" src="~/Content/cdn.shopify.com/s/files/1/0014/4880/4425/files/slider3.jpg"><div class="centered-text" style="width:239px;">@Model.Category3[i].Name</div></a>
+
+                                                        <a class="second__img animation1" href="/Books/Details?Id=@Model.Category3[i].Id&set=1"><img alt="" src="~/Content/cdn.shopify.com/s/files/1/0014/4880/4425/files/slider4.png"><div class="centered-text" style="color:black;">@Model.Category3[i].Author</div></a>
+
+
+
+
+                                                        
+
+
+
+
+                                                    </div>
+
+                                                    <div class="product__content content--center">
+                                                        <h4><a class="Amiri" style="direction: rtl;" href="products/affiliate-product.html">@Model.Category3[i].Name</a></h4>
+
+
+                                                        <ul class="prize d-flex">
+
+
+                                                            <li><span class=money>@Model.Category3[i].Genre.Name</span></li>
+
+
+
+                                                        </ul>
+
+
+                                                        <div class="action">
+                                                            <div class="actions_inner">
+                                                                <ul style="height:25px;" class="add_to_links">
+
+
+                                                                    <ul style="height:25px;" class="add_to_links">
+
+
+                                                                        <li class="Amiri">@Model.Category3[i].Publisher</li>
+
+                                                                    </ul>
+
+                                                                </ul>
+                                                            </div>
+                                                        </div>
+
+                                                        <!--<div class="product__hover--content">
+
+        <ul class="rating d-flex spr-badge-caption-none">
+            <span class="shopify-product-reviews-badge" data-id="1323780964425"></span>
+        </ul>
+
+    </div>-->
+
+                                                    </div>
+
+
+
+
+                                                </div>
+                                            </div>
+
+
+
+
+
+
+
+
+
+
+
+
+                                            <div class="col-lg-3 col-md-4 col-sm-6 col-12">
+                                                <div class="product product__style--3">
+
+
+
+
+
+
+
+
+
+
+
+                                                    <div class="product__thumb">
+
+
+                                                        <a class="first__img" href="/Books/Details?Id=@Model.Category3[i].Id&set=1"><img alt="" src="~/Content/cdn.shopify.com/s/files/1/0014/4880/4425/files/slider3.jpg"><div class="centered-text" style="width:239px;">@Model.Category3[++i].Name</div></a>
+
+                                                        <a class="second__img animation1" href="/Books/Details?Id=@Model.Category3[i].Id&set=1"><img alt="" src="~/Content/cdn.shopify.com/s/files/1/0014/4880/4425/files/slider4.png"><div class="centered-text" style="color:black;">@Model.Category3[i].Author</div></a>
+
+
+
+
+                                                        
+
+
+
+
+                                                    </div>
+
+                                                    <div class="product__content content--center">
+                                                        <h4><a class="Amiri" style="direction: rtl;" href="products/algunas-veces-por.html">@Model.Category3[i].Name</a></h4>
+
+
+                                                        <ul class="prize d-flex">
+
+
+                                                            <li><span class=money>@Model.Category3[i].Genre.Name</span></li>
+
+
+
+                                                        </ul>
+
+
+                                                        <div class="action">
+                                                            <div class="actions_inner">
+                                                                <ul style="height:25px;" class="add_to_links">
+
+
+                                                                    <ul style="height:25px;" class="add_to_links">
+
+
+                                                                        <li class="Amiri">@Model.Category3[i].Publisher</li>
+
+                                                                    </ul>
+
+                                                                </ul>
+                                                            </div>
+                                                        </div>
+
+                                                        <!--<div class="product__hover--content">
+
+        <ul class="rating d-flex spr-badge-caption-none">
+            <span class="shopify-product-reviews-badge" data-id="1323780964425"></span>
+        </ul>
+
+    </div>-->
+
+                                                    </div>
+
+
+
+
+                                                </div>
+                                            </div>
+
+
+
+                                        </div>
+                                    }
+
+
+
+
+
+
+
+
+                                </div>
+                            </div>
+                            <!-- End Single Tab Content -->
+                            <!-- Start Single Tab Content -->
+                            <div class="row single__tab tab-pane fade " id="cook" role="tabpanel">
+                                <div class="product__indicator--4 arrows_style owl-carousel owl-theme">
+
+
+
+
+
+
+
+
+
+
+
+
+                                    @for (var i = 0; i < Model.Category4.Count(); i++)
+                                    {
+                                        <div class="single__product">
+
+
+                                            <div class="col-lg-3 col-md-4 col-sm-6 col-12">
+                                                <div class="product product__style--3">
+
+
+
+
+
+
+
+
+
+
+
+                                                    <div class="product__thumb">
+
+
+                                                        <a class="first__img" href="/Books/Details?Id=@Model.Category4[i].Id&set=1"><img alt="" src="~/Content/cdn.shopify.com/s/files/1/0014/4880/4425/files/slider3.jpg"><div class="centered-text" style="width:239px;">@Model.Category4[i].Name</div></a>
+
+                                                        <a class="second__img animation1" href="/Books/Details?Id=@Model.Category4[i].Id&set=1"><img alt="" src="~/Content/cdn.shopify.com/s/files/1/0014/4880/4425/files/slider4.png"><div class="centered-text" style="color:black;">@Model.Category4[i].Author</div></a>
+
+
+
+
+
+
+
+
+                                                    </div>
+
+                                                    <div class="product__content content--center">
+                                                        <h4><a class="Amiri" style="direction: rtl;" href="products/affiliate-product.html">@Model.Category4[i].Name</a></h4>
+
+
+                                                        <ul class="prize d-flex">
+
+
+                                                            <li><span class=money>@Model.Category4[i].Genre.Name</span></li>
+
+
+
+                                                        </ul>
+
+
+                                                        <div class="action">
+                                                            <div class="actions_inner">
+                                                                <ul style="height:25px;" class="add_to_links">
+
+
+                                                                    <ul style="height:25px;" class="add_to_links">
+
+
+                                                                        <li class="Amiri">@Model.Category4[i].Publisher</li>
+
+                                                                    </ul>
+
+                                                                </ul>
+                                                            </div>
+                                                        </div>
+
+                                                        <!--<div class="product__hover--content">
+
+        <ul class="rating d-flex spr-badge-caption-none">
+            <span class="shopify-product-reviews-badge" data-id="1323780964425"></span>
+        </ul>
+
+    </div>-->
+
+                                                    </div>
+
+
+
+
+                                                </div>
+                                            </div>
+
+
+
+
+
+
+
+
+
+
+
+
+                                            <div class="col-lg-3 col-md-4 col-sm-6 col-12">
+                                                <div class="product product__style--3">
+
+
+
+
+
+
+
+
+
+
+
+                                                    <div class="product__thumb">
+
+
+                                                        <a class="first__img" href="/Books/Details?Id=@Model.Category4[i].Id&set=1"><img alt="" src="~/Content/cdn.shopify.com/s/files/1/0014/4880/4425/files/slider3.jpg"><div class="centered-text" style="width:239px;">@Model.Category4[++i].Name</div></a>
+
+                                                        <a class="second__img animation1" href="/Books/Details?Id=@Model.Category4[i].Id&set=1"><img alt="" src="~/Content/cdn.shopify.com/s/files/1/0014/4880/4425/files/slider4.png"><div class="centered-text" style="color:black;">@Model.Category4[i].Author</div></a>
+
+
+
+
+                                                        
+
+
+
+
+                                                    </div>
+
+                                                    <div class="product__content content--center">
+                                                        <h4><a class="Amiri" style="direction: rtl;" href="products/algunas-veces-por.html">@Model.Category4[i].Name</a></h4>
+
+
+                                                        <ul class="prize d-flex">
+
+
+                                                            <li><span class=money>@Model.Category4[i].Genre.Name</span></li>
+
+
+
+                                                        </ul>
+
+
+                                                        <div class="action">
+                                                            <div class="actions_inner">
+                                                                <ul style="height:25px;" class="add_to_links">
+
+
+                                                                    <ul style="height:25px;" class="add_to_links">
+
+
+                                                                        <li class="Amiri">@Model.Category4[i].Publisher</li>
+
+                                                                    </ul>
+
+                                                                </ul>
+                                                            </div>
+                                                        </div>
+
+                                                        <!--<div class="product__hover--content">
+
+        <ul class="rating d-flex spr-badge-caption-none">
+            <span class="shopify-product-reviews-badge" data-id="1323780964425"></span>
+        </ul>
+
+    </div>-->
+
+                                                    </div>
+
+
+
+
+                                                </div>
+                                            </div>
+
+
+
+                                        </div>
+                                    }
+
+
+
+
+
+                                </div>
+                            </div>
+                            <!-- End Single Tab Content -->
+
+
+                        </div>
+                    </div>
+                </section>
+                <!-- Start BEst Seller Area -->
+
+
+
+
+
+
+                <script>
+
+                    /*=============  Product Activation ============*/
+                    $('.product__indicator--4').owlCarousel({
+                        loop: true,
+                        margin: 0,
+                        nav: true,
+                        autoplay: false,
+                        autoplayTimeout: 10000,
+                        items: 4,
+                        navText: ['<i class="zmdi zmdi-chevron-left"></i>', '<i class="zmdi zmdi-chevron-right"></i>'],
+                        dots: false,
+                        lazyLoad: true,
+                        responsive: {
+                            0: {
+                                items: 1
+                            },
+                            576: {
+                                items: 2
+                            },
+                            768: {
+                                items: 3
+                            },
+                            992: {
+                                items: 4
+                            },
+                            1920: {
+                                items: 4
+                            }
+                        }
+                    });
+
+
+                </script>
+
+
+
+
+
+
+
+
+
+
+
+
+
+            </div>
+            <div id="shopify-section-1532252256986" class="shopify-section">
+                <!-- Start Recent Post Area
+                <section class="wn__recent__post" style="padding-top:80px;
+                                                   padding-bottom:80px;
+                                                   background-color:#f6f6f6;">
+                    <div class="container">
+                        <div class="row">
+                            <div class="col-lg-12">
+
+
+                                <!--Section Title Start
+                                <div class="section__title text-center">
+
+
+                                    <h2 class="title__be--2">
+                                        Our <span>Blog</span></h3>
+
+
+
+                                        <p>There are many variations of passages of Lorem Ipsum available, but the majority have suffered lebmid alteration in some ledmid form</p>
+
+
+
+                                </div>
+                                <!--Section Title End
+
+
+                            </div>
+                        </div>
+                        <div class="row mt--50">
+
+
+
+
+
+
+
+                            <div class="col-md-4 col-lg-4 col-sm-12">
+                                <div class="post__itam">
+                                    <div class="content">
+                                        <h3><a href="blogs/news/signficant-reading-has-a-signficant-info-number-of-benefits.html">Signficant reading has a more info number</a></h3>
+
+
+                                        <p>
+                                            Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,...
+
+
+
+                                            <div class="post__time">
+                                                <span class="day"> Jul 22, 18 </span>
+                                                <div class="post-meta">
+                                                    <ul>
+                                                    </ul>
+                                                </div>
+                                            </div>
+                                    </div>
+                                </div>
+                            </div>
+
+
+                            <div class="col-md-4 col-lg-4 col-sm-12">
+                                <div class="post__itam">
+                                    <div class="content">
+                                        <h3><a href="blogs/news/activities-of-the-frankfurt-book-international.html">Activities of the Frankfurt Book International</a></h3>
+
+
+                                        <p>
+                                            Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,...
+
+
+
+                                            <div class="post__time">
+                                                <span class="day"> Jul 22, 18 </span>
+                                                <div class="post-meta">
+                                                    <ul>
+                                                    </ul>
+                                                </div>
+                                            </div>
+                                    </div>
+                                </div>
+                            </div>
+
+
+                            <div class="col-md-4 col-lg-4 col-sm-12">
+                                <div class="post__itam">
+                                    <div class="content">
+                                        <h3><a href="blogs/news/the-london-book-fair-is-to-be-packed-with-exciting.html">The London Book Fair is to be packed with exciting</a></h3>
+
+
+                                        <p>
+                                            Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,...
+
+
+
+                                            <div class="post__time">
+                                                <span class="day"> Jul 22, 18 </span>
+                                                <div class="post-meta">
+                                                    <ul>
+                                                    </ul>
+                                                </div>
+                                            </div>
+                                    </div>
+                                </div>
+                            </div>
+
+
+
+                        </div>
+                    </div>
+                </section>
+                <!-- End Recent Post Area -->
+
+
+
+
+
+
+
+            </div><div id="shopify-section-1532261728896" class="shopify-section">
+                <!-- Start BEst Seller Area 
+                <section class="best-seel-area" style="padding-top:80px;padding-bottom:60px;">
+
+                    <div class="container">
+                        <div class="row">
+                            <div class="col-lg-12">
+
+
+                                <!--Section Title Start
+                                <div class="section__title text-center pb--50">
+
+
+                                    <h2 class="title__be--2">
+                                        Best<span> Seller</span></h3>
+
+
+
+                                        <p>There are many variations of passages of Lorem Ipsum available, but the majority have suffered lebmid alteration in some ledmid form</p>
+
+
+                                </div>
+                                <!--Section Title End
+
+                            </div>
+                        </div>
+                    </div>
+                    <!-- Start Single Tab Content 
+                    <div class="slider center">
+
+
+
+
+
+
+
+                        <!-- Start Single Product 
+                        <div class="product product__style--3">
+
+
+
+
+
+
+
+
+
+
+
+
+                            <div class="product__thumb">
+
+                                <a class="first__img" href="products/affiliate-product.html"><img alt="" src="~/Content/cdn.shopify.com/s/files/1/0014/4880/4425/products/2_7c24bc99-b7f5-4f06-a7c0-d8819ae597c6_grandefd3b.jpg?v=1532184116"></a>
+
+
+
+
+                                <div class="hot__box">
+                                    <span class="hot-label">44 % Off</span>
+                                </div>
+
+
+
+
+                            </div>
+
+
+                            <div class="product__content content--center">
+                                <div class="action">
+                                    <div class="actions_inner">
+
+                                        <ul class="add_to_links">
+
+
+
+
+
+
+                                            <li>
+                                                <a class="action-cart add_cart cart-item cart" title="Add to Cart" href="https://affiliate-program.amazon.com/">
+                                                    <i class="bi bi-shopping-bag4"></i>
+                                                </a>
+                                            </li>
+
+
+                                            <li>
+                                                <a class="" href="account/login.html" title="Wishlist">
+                                                    <i class="bi bi-heart-beat"></i>
+                                                </a>
+                                            </li>
+                                            <li>
+                                                <a href="#" class="compare" data-pid="affiliate-product" title="" data-original-title="Compare">
+                                                    <i class="bi bi-compass"></i>
+                                                </a>
+                                            </li>
+                                            <li>
+                                                <a data-toggle="modal" data-target="#exampleModal" title="Quick View"
+                                                   class="quickview modal-view detail-link" href="javascript:void(0);"
+                                                   onclick="quiqview('affiliate-product')">
+                                                    <i class="bi bi-search"></i>
+                                                </a>
+                                            </li>
+                                        </ul>
+
+                                    </div>
+                                </div>
+                                <div class="product__hover--content">
+                                    <ul class="rating d-flex spr-badge-caption-none">
+                                        <span class="shopify-product-reviews-badge" data-id="1323780964425"></span>
+                                    </ul>
+                                </div>
+                            </div>
+
+
+                        </div>
+                        <!-- Start Single Product -->
+                        <!-- Start Single Product 
+                        <div class="product product__style--3">
+
+
+
+
+
+
+
+
+
+
+
+
+                            <div class="product__thumb">
+
+                                <a class="first__img" href="products/algunas-veces-por.html"><img alt="" src="~/Content/cdn.shopify.com/s/files/1/0014/4880/4425/products/3_05969ca6-5642-4eee-a98b-bf4c38ba426e_grandecbc2.jpg?v=1532184125"></a>
+
+
+
+
+                                <div class="hot__box">
+                                    <span class="hot-label">43 % Off</span>
+                                </div>
+
+
+
+
+                            </div>
+
+
+                            <div class="product__content content--center">
+                                <div class="action">
+                                    <div class="actions_inner">
+
+                                        <ul class="add_to_links">
+
+
+
+                                            <li>
+                                                <a class="action-cart add_cart cart-item cart" title="" href="javascript:void(0);" onclick="Shopify.addItem(12210172100681, 1); return false;">
+                                                    <i class="bi bi-shopping-bag4"></i>
+                                                </a>
+                                            </li>
+
+
+                                            <li>
+                                                <a class="" href="account/login.html" title="Wishlist">
+                                                    <i class="bi bi-heart-beat"></i>
+                                                </a>
+                                            </li>
+                                            <li>
+                                                <a href="#" class="compare" data-pid="algunas-veces-por" title="" data-original-title="Compare">
+                                                    <i class="bi bi-compass"></i>
+                                                </a>
+                                            </li>
+                                            <li>
+                                                <a data-toggle="modal" data-target="#exampleModal" title="Quick View"
+                                                   class="quickview modal-view detail-link" href="javascript:void(0);"
+                                                   onclick="quiqview('algunas-veces-por')">
+                                                    <i class="bi bi-search"></i>
+                                                </a>
+                                            </li>
+                                        </ul>
+
+                                    </div>
+                                </div>
+                                <div class="product__hover--content">
+                                    <ul class="rating d-flex spr-badge-caption-none">
+                                        <span class="shopify-product-reviews-badge" data-id="1323780898889"></span>
+                                    </ul>
+                                </div>
+                            </div>
+
+
+                        </div>
+                        <!-- Start Single Product -->
+                        <!-- Start Single Product 
+                        <div class="product product__style--3">
+
+
+
+
+
+
+
+
+
+
+
+
+                            <div class="product__thumb">
+
+                                <a class="first__img" href="products/estado-de-desarrollo.html"><img alt="" src="~/Content/cdn.shopify.com/s/files/1/0014/4880/4425/products/4_ede6b586-b00a-41a2-869d-eb0d66f161f8_grande4958.jpg?v=1532184233"></a>
+
+
+
+
+                                <div class="hot__box">
+                                    <span class="hot-label">44 % Off</span>
+                                </div>
+
+
+
+
+                            </div>
+
+
+                            <div class="product__content content--center">
+                                <div class="action">
+                                    <div class="actions_inner">
+
+                                        <ul class="add_to_links">
+
+
+
+                                            <li>
+                                                <a class="action-cart add_cart cart-item cart" title="" href="javascript:void(0);" onclick="Shopify.addItem(12210169675849, 1); return false;">
+                                                    <i class="bi bi-shopping-bag4"></i>
+                                                </a>
+                                            </li>
+
+
+                                            <li>
+                                                <a class="" href="account/login.html" title="Wishlist">
+                                                    <i class="bi bi-heart-beat"></i>
+                                                </a>
+                                            </li>
+                                            <li>
+                                                <a href="#" class="compare" data-pid="estado-de-desarrollo" title="" data-original-title="Compare">
+                                                    <i class="bi bi-compass"></i>
+                                                </a>
+                                            </li>
+                                            <li>
+                                                <a data-toggle="modal" data-target="#exampleModal" title="Quick View"
+                                                   class="quickview modal-view detail-link" href="javascript:void(0);"
+                                                   onclick="quiqview('estado-de-desarrollo')">
+                                                    <i class="bi bi-search"></i>
+                                                </a>
+                                            </li>
+                                        </ul>
+
+                                    </div>
+                                </div>
+                                <div class="product__hover--content">
+                                    <ul class="rating d-flex spr-badge-caption-none">
+                                        <span class="shopify-product-reviews-badge" data-id="1323780735049"></span>
+                                    </ul>
+                                </div>
+                            </div>
+
+
+                        </div>
+                        <!-- Start Single Product -->
+                        <!-- Start Single Product 
+                        <div class="product product__style--3">
+
+
+
+
+
+
+
+
+
+
+
+
+                            <div class="product__thumb">
+
+                                <a class="first__img" href="products/resultado-muchos.html"><img alt="" src="~/Content/cdn.shopify.com/s/files/1/0014/4880/4425/products/7_4e78e040-cfa6-4e64-a491-5e193d81e4d4_grande4b0a.jpg?v=1533990935"></a>
+
+
+
+
+                                <div class="hot__box">
+                                    <span class="hot-label">23 % Off</span>
+                                </div>
+
+
+
+
+                            </div>
+
+
+                            <div class="product__content content--center">
+                                <div class="action">
+                                    <div class="actions_inner">
+
+                                        <ul class="add_to_links">
+
+
+
+                                            <li>
+                                                <a class="action-cart add_cart cart-item cart" title="" href="javascript:void(0);" onclick="Shopify.addItem(12210170265673, 1); return false;">
+                                                    <i class="bi bi-shopping-bag4"></i>
+                                                </a>
+                                            </li>
+
+
+                                            <li>
+                                                <a class="" href="account/login.html" title="Wishlist">
+                                                    <i class="bi bi-heart-beat"></i>
+                                                </a>
+                                            </li>
+                                            <li>
+                                                <a href="#" class="compare" data-pid="resultado-muchos" title="" data-original-title="Compare">
+                                                    <i class="bi bi-compass"></i>
+                                                </a>
+                                            </li>
+                                            <li>
+                                                <a data-toggle="modal" data-target="#exampleModal" title="Quick View"
+                                                   class="quickview modal-view detail-link" href="javascript:void(0);"
+                                                   onclick="quiqview('resultado-muchos')">
+                                                    <i class="bi bi-search"></i>
+                                                </a>
+                                            </li>
+                                        </ul>
+
+                                    </div>
+                                </div>
+                                <div class="product__hover--content">
+                                    <ul class="rating d-flex spr-badge-caption-none">
+                                        <span class="shopify-product-reviews-badge" data-id="1323780767817"></span>
+                                    </ul>
+                                </div>
+                            </div>
+
+
+                        </div>
+                        <!-- Start Single Product -->
+                        <!-- Start Single Product 
+                        <div class="product product__style--3">
+
+
+
+
+
+
+
+
+
+
+
+
+                            <div class="product__thumb">
+
+                                <a class="first__img" href="products/adquiera-mas.html"><img alt="" src="~/Content/cdn.shopify.com/s/files/1/0014/4880/4425/products/1_grande6679.jpg?v=1532184099"></a>
+
+
+
+
+                                <div class="hot__box">
+                                    <span class="hot-label">45 % Off</span>
+                                </div>
+
+
+
+
+                            </div>
+
+
+                            <div class="product__content content--center">
+                                <div class="action">
+                                    <div class="actions_inner">
+
+                                        <ul class="add_to_links">
+
+
+
+                                            <li>
+                                                <a class="action-cart add_cart cart-item cart" title="" href="javascript:void(0);" onclick="Shopify.addItem(12210158862409, 1); return false;">
+                                                    <i class="bi bi-shopping-bag4"></i>
+                                                </a>
+                                            </li>
+
+
+                                            <li>
+                                                <a class="" href="account/login.html" title="Wishlist">
+                                                    <i class="bi bi-heart-beat"></i>
+                                                </a>
+                                            </li>
+                                            <li>
+                                                <a href="#" class="compare" data-pid="adquiera-mas" title="" data-original-title="Compare">
+                                                    <i class="bi bi-compass"></i>
+                                                </a>
+                                            </li>
+                                            <li>
+                                                <a data-toggle="modal" data-target="#exampleModal" title="Quick View"
+                                                   class="quickview modal-view detail-link" href="javascript:void(0);"
+                                                   onclick="quiqview('adquiera-mas')">
+                                                    <i class="bi bi-search"></i>
+                                                </a>
+                                            </li>
+                                        </ul>
+
+                                    </div>
+                                </div>
+                                <div class="product__hover--content">
+                                    <ul class="rating d-flex spr-badge-caption-none">
+                                        <span class="shopify-product-reviews-badge" data-id="1323780407369"></span>
+                                    </ul>
+                                </div>
+                            </div>
+
+
+                        </div>
+                        <!-- Start Single Product -->
+                        <!-- Start Single Product 
+                        <div class="product product__style--3">
+
+
+
+
+
+
+
+
+
+
+
+
+                            <div class="product__thumb">
+
+                                <a class="first__img" href="products/como-por-ejemplo.html"><img alt="" src="~/Content/cdn.shopify.com/s/files/1/0014/4880/4425/products/8_b6276465-9852-4785-baeb-c15685798f71_grande1dcc.jpg?v=1532184211"></a>
+
+
+
+
+                                <div class="hot__box">
+                                    <span class="hot-label">57 % Off</span>
+                                </div>
+
+
+
+
+                            </div>
+
+
+                            <div class="product__content content--center">
+                                <div class="action">
+                                    <div class="actions_inner">
+
+                                        <ul class="add_to_links">
+
+
+
+                                            <li>
+                                                <a class="action-cart add_cart cart-item cart" title="" href="javascript:void(0);" onclick="Shopify.addItem(12210155257929, 1); return false;">
+                                                    <i class="bi bi-shopping-bag4"></i>
+                                                </a>
+                                            </li>
+
+
+                                            <li>
+                                                <a class="" href="account/login.html" title="Wishlist">
+                                                    <i class="bi bi-heart-beat"></i>
+                                                </a>
+                                            </li>
+                                            <li>
+                                                <a href="#" class="compare" data-pid="como-por-ejemplo" title="" data-original-title="Compare">
+                                                    <i class="bi bi-compass"></i>
+                                                </a>
+                                            </li>
+                                            <li>
+                                                <a data-toggle="modal" data-target="#exampleModal" title="Quick View"
+                                                   class="quickview modal-view detail-link" href="javascript:void(0);"
+                                                   onclick="quiqview('como-por-ejemplo')">
+                                                    <i class="bi bi-search"></i>
+                                                </a>
+                                            </li>
+                                        </ul>
+
+                                    </div>
+                                </div>
+                                <div class="product__hover--content">
+                                    <ul class="rating d-flex spr-badge-caption-none">
+                                        <span class="shopify-product-reviews-badge" data-id="1323780243529"></span>
+                                    </ul>
+                                </div>
+                            </div>
+
+
+                        </div>
+                        <!-- Start Single Product -->
+                        <!-- Start Single Product 
+                        <div class="product product__style--3">
+
+
+
+
+
+
+
+
+
+
+
+
+                            <div class="product__thumb">
+
+                                <a class="first__img" href="products/combinadas-con.html"><img alt="" src="~/Content/cdn.shopify.com/s/files/1/0014/4880/4425/products/5_4d863407-6e2e-47e0-be22-7b5f4128f2c9_grande555b.jpg?v=1532184142"></a>
+
+
+
+
+                                <div class="hot__box">
+                                    <span class="hot-label">39 % Off</span>
+                                </div>
+
+
+
+
+                            </div>
+
+
+                            <div class="product__content content--center">
+                                <div class="action">
+                                    <div class="actions_inner">
+
+                                        <ul class="add_to_links">
+
+
+
+                                            <li>
+                                                <a class="action-cart add_cart cart-item cart" title="" href="javascript:void(0);" onclick="Shopify.addItem(12210152243273, 1); return false;">
+                                                    <i class="bi bi-shopping-bag4"></i>
+                                                </a>
+                                            </li>
+
+
+                                            <li>
+                                                <a class="" href="account/login.html" title="Wishlist">
+                                                    <i class="bi bi-heart-beat"></i>
+                                                </a>
+                                            </li>
+                                            <li>
+                                                <a href="#" class="compare" data-pid="combinadas-con" title="" data-original-title="Compare">
+                                                    <i class="bi bi-compass"></i>
+                                                </a>
+                                            </li>
+                                            <li>
+                                                <a data-toggle="modal" data-target="#exampleModal" title="Quick View"
+                                                   class="quickview modal-view detail-link" href="javascript:void(0);"
+                                                   onclick="quiqview('combinadas-con')">
+                                                    <i class="bi bi-search"></i>
+                                                </a>
+                                            </li>
+                                        </ul>
+
+                                    </div>
+                                </div>
+                                <div class="product__hover--content">
+                                    <ul class="rating d-flex spr-badge-caption-none">
+                                        <span class="shopify-product-reviews-badge" data-id="1323780079689"></span>
+                                    </ul>
+                                </div>
+                            </div>
+
+
+                        </div>
+                        <!-- Start Single Product -->
+                        <!-- Start Single Product 
+                        <div class="product product__style--3">
+
+
+
+
+
+
+
+
+
+
+
+
+                            <div class="product__thumb">
+
+                                <a class="first__img" href="products/aquellos-interesados.html"><img alt="" src="~/Content/cdn.shopify.com/s/files/1/0014/4880/4425/products/4_2dba9474-e169-4d09-805e-181cd48d064a_grandeec41.jpg?v=1532184132"></a>
+
+
+
+
+                                <div class="hot__box">
+                                    <span class="hot-label">44 % Off</span>
+                                </div>
+
+
+
+
+                            </div>
+
+
+                            <div class="product__content content--center">
+                                <div class="action">
+                                    <div class="actions_inner">
+
+                                        <ul class="add_to_links">
+
+
+
+                                            <li>
+                                                <a class="action-cart add_cart cart-item cart" title="" href="javascript:void(0);" onclick="Shopify.addItem(12210166726729, 1); return false;">
+                                                    <i class="bi bi-shopping-bag4"></i>
+                                                </a>
+                                            </li>
+
+
+                                            <li>
+                                                <a class="" href="account/login.html" title="Wishlist">
+                                                    <i class="bi bi-heart-beat"></i>
+                                                </a>
+                                            </li>
+                                            <li>
+                                                <a href="#" class="compare" data-pid="aquellos-interesados" title="" data-original-title="Compare">
+                                                    <i class="bi bi-compass"></i>
+                                                </a>
+                                            </li>
+                                            <li>
+                                                <a data-toggle="modal" data-target="#exampleModal" title="Quick View"
+                                                   class="quickview modal-view detail-link" href="javascript:void(0);"
+                                                   onclick="quiqview('aquellos-interesados')">
+                                                    <i class="bi bi-search"></i>
+                                                </a>
+                                            </li>
+                                        </ul>
+
+                                    </div>
+                                </div>
+                                <div class="product__hover--content">
+                                    <ul class="rating d-flex spr-badge-caption-none">
+                                        <span class="shopify-product-reviews-badge" data-id="1323780603977"></span>
+                                    </ul>
+                                </div>
+                            </div>
+
+
+                        </div>
+                        <!-- Start Single Product 
+
+
+                    </div>
+                    <!-- End Single Tab Content 
+
+                </section>
+                <!-- Start BEst Seller Area -->
+
+
+
+                <script>
+
+                    /*====== slick slider ======*/
+                    $('.center').slick({
+                        centerMode: true,
+                        centerPadding: '0px',
+                        slidesToShow: 7,
+                        responsive: [
+                            {
+                                breakpoint: 1366,
+                                settings: {
+                                    slidesToShow: 3,
+                                    slidesToScroll: 3,
+                                    infinite: true,
+                                    dots: false
+                                }
+                            },
+                            {
+                                breakpoint: 1100,
+                                settings: {
+                                    slidesToShow: 3,
+                                    slidesToScroll: 3,
+                                    infinite: true,
+                                    dots: false
+                                }
+                            },
+                            {
+                                breakpoint: 970,
+                                settings: {
+                                    slidesToShow: 3,
+                                    slidesToScroll: 3,
+                                    infinite: true,
+                                    dots: false
+                                }
+                            },
+                            {
+                                breakpoint: 768,
+                                settings: {
+                                    arrows: false,
+                                    centerMode: true,
+                                    slidesToShow: 2
+                                }
+                            },
+                            {
+                                breakpoint: 480,
+                                settings: {
+                                    arrows: false,
+                                    centerMode: true,
+                                    slidesToShow: 1
+                                }
+                            }
+                        ]
+                    });
+
+
+                </script>
+
+
+
+
+
+
+
+            </div><!-- END content_for_index -->
+
+        </main>
+
+       

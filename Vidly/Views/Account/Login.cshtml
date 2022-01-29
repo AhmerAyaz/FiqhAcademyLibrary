@@ -1,0 +1,123 @@
+﻿<div class="ht__bradcaump__area bg-image--6">
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-12">
+                <div class="bradcaump__inner text-center">
+                    <h2 class="bradcaump-title">Account</h2>
+
+                    <nav class="bradcaump-content" role="navigation" aria-label="breadcrumbs">
+                        <ul>
+
+                            <li>
+                                <a class="breadcrumb_item" href="../index.html" title="Back to the home page">Home</a>
+                            </li>
+                            <li>
+
+
+                                <span>Account</span>
+
+
+                            </li>
+                        </ul>
+                    </nav>
+
+
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+<style>
+
+
+    .ht__bradcaump__area {
+        padding-top: 210px;
+        padding-bottom: 110px;
+        background-image: url(../../Content/cdn.shopify.com/s/files/1/0014/4880/4425/files/6_1920xc744.jpg);
+    }
+
+    .bradcaump__inner .bradcaump-title {
+        color: #ffffff;
+    }
+
+    .bradcaump__inner .bradcaump-content .breadcrumb_item {
+        color: #ffffff;
+    }
+
+    .bradcaump-content li span {
+        color: #e59285;
+    }
+</style>
+
+
+
+
+<main role="main">
+
+    <section class="my_account_area section-padding--lg bg--white">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-6 col-12 offset-lg-3">
+
+                    <div class="note form-success" id="ResetSuccess" style="display:none;">
+                        We&#39;ve sent you an email with a link to update your password.
+                    </div>
+
+                    <div class="my__account__wrapper" id="CustomerLoginForm">
+                        <h3 class="account__title">Login</h3>
+                        @using (Html.BeginForm("Login", "Account", new { ReturnUrl = ViewBag.ReturnUrl }, FormMethod.Post, new { @class = "form-horizontal", role = "form" }))
+                        {
+                            @Html.AntiForgeryToken()
+                            <input type="hidden" name="form_type" value="customer_login" /><input type="hidden" name="utf8" value="✓" />
+
+                            <div class="account__form">
+                                <div class="input__box">
+                                    <label for="CustomerEmail">Email Address <span>*</span></label>
+                                    <input type="email" name="Email" id="CustomerEmail" class="" autocorrect="off" autocapitalize="off" autofocus>
+                                </div>
+
+                                <div class="input__box">
+                                    <label for="CustomerPassword">Password <span>*</span></label>
+                                    <input type="password" value="" name="Password" id="CustomerPassword" class="">
+                                </div>
+
+                                <div class="form__btn">
+                                    <button type="submit">Login</button>
+                                    <!--<a href="register.html">Create an account</a>-->
+                                    @Html.ActionLink("Register", "Register")
+                                </div>
+
+                                <a class="forget_pass" href="#recover" id="RecoverPassword">Lost your password?</a>
+
+                            </div>
+                        }
+                    </div>
+                    <div class="my__account__wrapper" id="RecoverPasswordForm" style="display: none;">
+                        <h3 class="account__title">Reset Your Password</h3>
+                        <p>We will send you an email to reset your password</p>
+                        <form method="post" action="https://boighor-demo.myshopify.com/account/recover" accept-charset="UTF-8">
+                            <input type="hidden" name="form_type" value="recover_customer_password" /><input type="hidden" name="utf8" value="✓" />
+
+
+                            <div class="account__form">
+                                <div class="input__box">
+                                    <label for="RecoverEmail">Email Address <span>*</span></label>
+                                    <input type="email" value="" name="email" id="RecoverEmail" class="input-full" autocorrect="off" autocapitalize="off">
+                                </div>
+                                <div class="form__btn">
+                                    <button type="submit">Submit</button>
+                                    <a href="#" id="HideRecoverPasswordLink">Cancel</a>
+                                </div>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+</main>
+
+

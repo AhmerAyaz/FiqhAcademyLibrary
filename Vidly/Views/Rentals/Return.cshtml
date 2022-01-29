@@ -1,0 +1,144 @@
+﻿@model Vidly.Models.Rental
+@{
+    //ViewBag.Title = customer.Customer.Name;
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+
+
+<div class="ht__bradcaump__area bg-image--6">
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-12">
+                <div class="bradcaump__inner text-center">
+                    <h2 class="bradcaump-title">Returned</h2>
+
+                    <nav class="bradcaump-content" role="navigation" aria-label="breadcrumbs">
+                        <ul>
+
+                            <li>
+                                <a class="breadcrumb_item" href="/Books" title="Back to the home page">Home</a>
+                            </li>
+                            <li>
+
+
+
+                                <span>Returned</span>
+
+
+
+                            </li>
+                        </ul>
+                    </nav>
+
+
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+<style>
+
+
+    .ht__bradcaump__area {
+        padding-top: 210px;
+        padding-bottom: 110px;
+        background-image: url(../../Content/cdn.shopify.com/s/files/1/0014/4880/4425/files/6_1920xc744.jpg?v=1532496563);
+    }
+
+    .bradcaump__inner .bradcaump-title {
+        color: #ffffff;
+    }
+
+    .bradcaump__inner .bradcaump-content .breadcrumb_item {
+        color: #ffffff;
+    }
+
+    .bradcaump-content li span {
+        color: #e59285;
+    }
+</style>
+
+<main role="main">
+
+    <div id="shopify-section-blog-template" class="shopify-section">
+        <!-- Start Blog Area -->
+        <div class="page-blog section-padding--lg blog-sidebar right-sidebar">
+            <div class="container">
+                <div class="row ">
+
+
+                    <div class="col-lg-9 col-12">
+                        <div class="blog-page">
+                            <div class="row"> 
+                                <div class="col-lg-12 col-md-12">
+
+                                    <article class="blog__post blog-post-first d-flex flex-wrap" style="width: 600px;">
+
+                                        <div class="thumb">
+                                            <a href="news/signficant-reading-has-a-signficant-info-number-of-benefits.html">
+                                                <img src="/Content/cdn.shopify.com/s/files/1/0014/4880/4425/files/slider3.jpg" alt="">
+                                            </a>
+                                        </div>
+
+                                        <div class="content">
+                                            <h4><a class="Amiri" style="white-space:normal;" href="/Books/Details?Id=@Model.Movie.Id&set=@Model.Movie.SetNo">@Model.Movie.Name</a></h4>
+                                            <ul class="post__meta">
+                                                <li><a href='/Customers/Detail/@Model.User.Id'>Customer: @Model.User.FirstName</a></li>
+                                                <li class="post_separator">   /   </li>
+                                                <li>Date : @Model.DateRented.ToString("MM/dd/yyyy")</li>
+                                            </ul>
+                                            <b>Date Returned: @Model.DateReturned.ToString("MM/dd/yyyy")</b>
+                                            <br />
+                                            <b>Total Days: @ViewBag.Difference</b>
+
+
+                                        </div>
+
+
+                                    </article>
+
+                                </div>
+                                    
+                                
+                            </div>
+
+
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- End Blog Area -->
+
+
+    <style>
+
+        .blog-page .shopbtn::after {
+            background: rgba(0, 0, 0, 0) url("../../cdn.shopify.com/s/files/1/0014/4880/4425/t/5/assets/links_static17d2.png?v=7547545147744877590") no-repeat scroll 100% 50%;
+        }
+
+        .blog-page .shopbtn:hover::after {
+            background-position: 0 50%;
+            transition: all 300ms ease-in 0s;
+        }
+    </style>
+
+
+
+
+    </div>
+
+</main>
+
+
+
+
+
+
+
+

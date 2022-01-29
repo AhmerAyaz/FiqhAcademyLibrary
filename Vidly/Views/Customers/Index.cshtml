@@ -1,0 +1,200 @@
+﻿@model PagedList.IPagedList<Vidly.Models.ApplicationUser>
+@using PagedList.Mvc;
+@{
+    //ViewBag.Title = customer.Customer.Name;
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+
+@using PagedList.Mvc;
+@using System.Web.Mvc;
+@using Vidly.Models;
+<link href="~/Content/PagedList.css" rel="stylesheet" type="text/css" />
+
+@{
+    ViewBag.Title = "Books";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+
+
+
+<div class="ht__bradcaump__area bg-image--6">
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-12">
+                <div class="bradcaump__inner text-center">
+                    <h2 class="bradcaump-title">Customers</h2>
+
+                    <nav class="bradcaump-content" role="navigation" aria-label="breadcrumbs">
+                        <ul>
+
+                            <li>
+                                <a class="breadcrumb_item" href="/Books" title="Back to the home page">Home</a>
+                            </li>
+                            <li>
+
+
+
+                                <span>Customers</span>
+
+
+
+                            </li>
+                        </ul>
+                    </nav>
+
+
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+<style>
+
+
+    .ht__bradcaump__area {
+        padding-top: 210px;
+        padding-bottom: 110px;
+        background-image: url(../../Content/cdn.shopify.com/s/files/1/0014/4880/4425/files/6_1920xc744.jpg?v=1532496563);
+    }
+
+    .bradcaump__inner .bradcaump-title {
+        color: #ffffff;
+    }
+
+    .bradcaump__inner .bradcaump-content .breadcrumb_item {
+        color: #ffffff;
+    }
+
+    .bradcaump-content li span {
+        color: #e59285;
+    }
+</style>
+
+<main role="main">
+
+    <div id="shopify-section-blog-template" class="shopify-section">
+        <!-- Start Blog Area -->
+        <div class="page-blog section-padding--lg blog-sidebar right-sidebar">
+            <div class="container">
+                <h2 class="urdu" style="text-align:center;">Customers</h2>
+                <p dir=rtl>
+                    @Html.ActionLink("New Customer", "Register", "Account", null, new { @class = "btn btn-primary" })
+                </p>
+                @using (Html.BeginForm())
+                {
+                    <p style="direction:rtl;">
+                        <div class="col-md-3" style="float:right;">
+                            @Html.TextBox("customerName", ViewBag.currentName as string, new { @class = "input-sm form-control", style = "direction: rtl; font-size: 18px;", placeholder = "Customer Name" })
+                        </div>
+
+
+                        <input style="float:right;" class="btn btn-primary col-md-3" type="submit" value="Search" />
+                    </p>
+                    <br />
+                }
+                <table style="margin-top: 20px; font-size: large;" id="Books" cellpadding="0" cellspacing="0" border="0" class=" urdu table table-striped table-bordered">
+                    <thead>
+                        <tr>
+                            <th style="text-align:center;">پاسورڈ</th>
+                            <th style="text-align:center;">نمبر</th>
+                            <th style="text-align:center;">میل</th>
+                            <th style="text-align:center;">والد  کا  نام</th>
+                            <th style="text-align:center;">نام</th>
+                        </tr>
+                    </thead>
+                    <tbody style="text-align:center;">
+                        @foreach (var item in Model)
+                        {
+                            <tr class="gradeX">
+                                @*<td>
+                            @Html.DisplayFor(modelItem => item.NumberAvailable, new { style = "text-align:centre;" })
+                        </td>
+                        <td>
+                            @Html.DisplayFor(modelItem => item.NumberInStock, new { dir = "rtl"})
+                        </td>*@
+
+                                <td>
+                                    @Html.DisplayFor(modelItem => item.DrivingLicense)
+
+                                </td>
+                                <td>
+                                    @Html.DisplayFor(modelItem => item.Phone)
+                                </td>
+                                <td>
+                                    @Html.DisplayFor(modelItem => item.Email)
+                                </td>
+                                <td>
+                                    @Html.DisplayFor(modelItem => item.LastName)
+
+                                </td>
+                                <td>
+                                    <a href='/Books/History/@item.Id'>@Html.DisplayFor(modelItem => item.FirstName)</a> @*/Customers/Detail/*@
+                                </td>
+
+                            </tr>
+                        }
+                    </tbody>
+                </table>
+                <br />
+                Page @(Model.PageCount < Model.PageNumber ? 0 : Model.PageNumber) of @Model.PageCount
+
+                @Html.PagedListPager(Model, page => Url.Action("Temporary",
+                    new { page, currentName = ViewBag.currentName }))
+            </div>
+        </div>
+    </div>
+    <!-- End Blog Area -->
+
+
+    <style>
+
+        .blog-page .shopbtn::after {
+            background: rgba(0, 0, 0, 0) url("../../cdn.shopify.com/s/files/1/0014/4880/4425/t/5/assets/links_static17d2.png?v=7547545147744877590") no-repeat scroll 100% 50%;
+        }
+
+        .blog-page .shopbtn:hover::after {
+            background-position: 0 50%;
+            transition: all 300ms ease-in 0s;
+        }
+    </style>
+
+
+
+
+    </div>
+
+</main>
+
+<script src="//ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
+<script src="//netdna.bootstrapcdn.com/bootstrap/3.0.0/js/bootstrap.min.js"></script>
+<script type="text/javascript">
+    $(document).ready(function () {
+
+        $("#Books").on("click", ".js-delete", function () {
+            var button = $(this);
+
+            bootbox.confirm("Are you sure you want to delete this book?", function (result) {
+                if (result) {
+                    $.ajax({
+                        url: "/api/books/" + button.attr("data-movie-id"),
+                        method: "DELETE",
+                        success: function () {
+                            location.reload();
+                        }
+                    });
+                }
+            });
+        });
+    });
+</script>
+
+
+
+
+
+
+

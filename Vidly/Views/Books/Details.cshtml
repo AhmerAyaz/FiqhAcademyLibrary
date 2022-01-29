@@ -1,0 +1,1968 @@
+﻿@using Microsoft.AspNet.Identity
+@model Vidly.ViewModels.Details
+@using Vidly.Models
+
+
+
+<div class="ht__bradcaump__area bg-image--6">
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-12">
+                <div class="bradcaump__inner text-center">
+                    <h2 class="bradcaump-title">Variable Product</h2>
+
+                    <nav class="bradcaump-content" role="navigation" aria-label="breadcrumbs">
+                        <ul>
+
+                            <li>
+                                <a class="breadcrumb_item" href="../index.html" title="Back to the home page">Home</a>
+                            </li>
+                            <li>
+
+
+
+
+                                <span>Variable Product</span>
+
+
+                            </li>
+                        </ul>
+                    </nav>
+
+
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+<style>
+
+
+    .ht__bradcaump__area {
+        padding-top: 210px;
+        padding-bottom: 110px;
+        background-image: url(../../Content/cdn.shopify.com/s/files/1/0014/4880/4425/files/6_1920xc744.jpg?v=1532496563);
+    }
+
+    .bradcaump__inner .bradcaump-title {
+        color: #ffffff;
+    }
+
+    .bradcaump__inner .bradcaump-content .breadcrumb_item {
+        color: #ffffff;
+    }
+
+    .bradcaump-content li span {
+        color: #e59285;
+    }
+</style>
+
+
+
+
+<main role="main">
+
+    <div id="shopify-section-product-template" class="shopify-section">
+        <div style="direction:rtl;" class="maincontent section-padding--lg">
+            <div class="container">
+                <div class="row ">
+                    <div class="col-lg-9 col-12">
+                        <div class="wn__single__product">
+                            <div class="row">
+                                <div class="col-lg-6 col-12">
+                                    <div class="wn__fotorama__wrapper">
+                                        <div class="fotorama wn__fotorama__action" data-nav="thumbs">
+
+                                            <a href="~/Content/cdn.shopify.com/s/files/1/0014/4880/4425/files/slider1.jpg"><img src="~/Content/cdn.shopify.com/s/files/1/0014/4880/4425/files/slider1.jpg" alt=""></a>
+
+                                            <a href="~/Content/cdn.shopify.com/s/files/1/0014/4880/4425/files/slider2.jpg"><img src="~/Content/cdn.shopify.com/s/files/1/0014/4880/4425/files/slider2.jpg" alt=""></a>
+
+                                            <a href="~/Content/cdn.shopify.com/s/files/1/0014/4880/4425/files/slider3.jpg"><img src="~/Content/cdn.shopify.com/s/files/1/0014/4880/4425/files/slider3.jpg" alt=""></a>
+
+
+                                        </div>
+
+                                    </div>
+                                </div>
+
+
+                                <div class="col-lg-6 col-12">
+                                    <form action="https://boighor-demo.myshopify.com/cart/add" method="post" enctype="multipart/form-data" id="add-item-form">
+                                        <div class="product__info__main">
+                                            <h1 style="text-align:initial;">@Model.book.Name</h1>
+                                            <h6 style="text-align:initial;">@Model.book.Author</h6>
+                                            <div class="product-info-stock-sku d-flex">
+                                                <p>
+                                                    Availability:
+                                                    @if (Model.book.NumberAvailable >= 1)
+                                                    {
+                                                        <span>
+
+                                                            In Stock
+
+                                                        </span>
+                                                    }
+                                                    else
+                                                    {
+                                                        <span>
+
+                                                            Out of Stock
+
+                                                        </span>
+                                                    }
+
+                                                </p>
+
+                                            </div>
+                                            <!--
+                                            <div class="product-reviews-summary d-flex">
+                                                <ul class="rating-summary d-flex">
+                                                    <span class="shopify-product-reviews-badge" data-id="1323780997193"></span>
+                                                </ul>
+                                            </div>
+                                            <div class="price-box">
+                                                <span id="ProductPrice"><span class=money>$400.00</span></span>
+
+                                                <del><span id="ComparePrice"><span class=money>$500.00</span></span></del>
+
+                                            </div>-->
+
+                                            <div class="product-color-label">
+                                                <!--<select name="id" id="productSelect" class="product-single__variants email s-email s-wid" style="display:none;">
+
+
+                                                    <option selected="selected" data-sku="" value="12210174459977">sm / yellow / Cotton - <span class=money>$400.00 USD</span></option>
+
+
+
+                                                    <option data-sku="" value="12210174492745">sm / yellow / Wool - <span class=money>$385.00 USD</span></option>
+
+
+
+
+
+
+                                                </select>-->
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+                                                <style>
+                                                    label[for="product-select-option-0"] {
+                                                        display: none;
+                                                    }
+
+                                                    #product-select-option-0 {
+                                                        display: none;
+                                                    }
+
+                                                        #product-select-option-0 + .custom-style-select-box {
+                                                            display: none !important;
+                                                        }
+                                                </style>
+                                                <script>$(window).load(function () { $('.selector-wrapper:eq(0)').hide(); });</script>
+
+
+
+
+
+
+
+
+
+
+                                                <div class="swatch clearfix" data-option-index="0">
+                                                    <div class="header" style="text-align:right; font-weight:bolder;">جلد  نمبر:  </div>
+
+
+
+
+
+
+
+                                                    @for (byte? i = Model.book.Set; i >= 1; i--)
+                                                    {
+                                                        <div data-value="sm" class="swatch-element sm available">
+                                                            @if (Model.book.SetNo == i)
+                                                            {
+                                                                <a href="/Books/Details?Id=@Model.book.Id&set=@i" class="list-group-item list-group-item-action active" style="background-color:#e59285; border-color: black;">@i</a>
+                                                            }
+                                                            else
+                                                            {
+                                                                <a href="/Books/Details?Id=@Model.book.Id&set=@i" class="list-group-item list-group-item-action">@i</a>
+                                                            }
+
+                                                        </div>
+                                                        if (i % 10 == 0)
+                                                        {
+                                                            <br />
+                                                        }
+                                                    }
+                                                    <!--
+                                                    <script>
+                                                        jQuery('.swatch[data-option-index="0"] .sm').removeClass('soldout').addClass('available').find(':radio').removeAttr('disabled');
+                                                    </script>
+
+
+
+
+
+                                                    <script>
+                                                        jQuery('.swatch[data-option-index="0"] .sm').removeClass('soldout').addClass('available').find(':radio').removeAttr('disabled');
+                                                    </script>
+
+
+
+
+
+                                                    <script>
+                                                        jQuery('.swatch[data-option-index="0"] .sm').removeClass('soldout').addClass('available').find(':radio').removeAttr('disabled');
+                                                    </script>
+
+
+
+
+
+                                                    <script>
+                                                        jQuery('.swatch[data-option-index="0"] .sm').removeClass('soldout').addClass('available').find(':radio').removeAttr('disabled');
+                                                    </script>
+
+
+
+
+
+                                                    <script>
+                                                        jQuery('.swatch[data-option-index="0"] .sm').removeClass('soldout').addClass('available').find(':radio').removeAttr('disabled');
+                                                    </script>
+
+
+
+
+
+                                                    <script>
+                                                        jQuery('.swatch[data-option-index="0"] .sm').removeClass('soldout').addClass('available').find(':radio').removeAttr('disabled');
+                                                    </script>
+
+
+
+
+
+                                                    <script>
+                                                        jQuery('.swatch[data-option-index="0"] .sm').removeClass('soldout').addClass('available').find(':radio').removeAttr('disabled');
+                                                    </script>
+
+
+
+
+
+                                                    <script>
+                                                        jQuery('.swatch[data-option-index="0"] .sm').removeClass('soldout').addClass('available').find(':radio').removeAttr('disabled');
+                                                    </script>
+
+
+
+
+
+                                                    <script>
+                                                        jQuery('.swatch[data-option-index="0"] .sm').removeClass('soldout').addClass('available').find(':radio').removeAttr('disabled');
+                                                    </script>-->
+                                                    <!--<div data-value="md" class="swatch-element md available">
+                                                        <input id="swatch-0-md" type="radio" name="option-0" value="md" />
+
+                                                        <label for="swatch-0-md">
+                                                            2
+
+                                                        </label>
+
+                                                    </div>
+                                                        -->
+                                                    <!--
+                                                    <script>
+                                                        jQuery('.swatch[data-option-index="0"] .md').removeClass('soldout').addClass('available').find(':radio').removeAttr('disabled');
+                                                    </script>
+
+
+
+
+
+                                                    <script>
+                                                        jQuery('.swatch[data-option-index="0"] .md').removeClass('soldout').addClass('available').find(':radio').removeAttr('disabled');
+                                                    </script>
+
+
+
+
+
+                                                    <script>
+                                                        jQuery('.swatch[data-option-index="0"] .md').removeClass('soldout').addClass('available').find(':radio').removeAttr('disabled');
+                                                    </script>
+
+
+
+
+
+                                                    <script>
+                                                        jQuery('.swatch[data-option-index="0"] .md').removeClass('soldout').addClass('available').find(':radio').removeAttr('disabled');
+                                                    </script>
+
+
+
+
+
+                                                    <script>
+                                                        jQuery('.swatch[data-option-index="0"] .md').removeClass('soldout').addClass('available').find(':radio').removeAttr('disabled');
+                                                    </script>
+
+
+
+
+
+                                                    <script>
+                                                        jQuery('.swatch[data-option-index="0"] .md').removeClass('soldout').addClass('available').find(':radio').removeAttr('disabled');
+                                                    </script>
+
+
+
+
+
+                                                    <script>
+                                                        jQuery('.swatch[data-option-index="0"] .md').removeClass('soldout').addClass('available').find(':radio').removeAttr('disabled');
+                                                    </script>
+
+
+
+
+
+                                                    <script>
+                                                        jQuery('.swatch[data-option-index="0"] .md').removeClass('soldout').addClass('available').find(':radio').removeAttr('disabled');
+                                                    </script>
+
+
+
+
+
+                                                    <script>
+                                                        jQuery('.swatch[data-option-index="0"] .md').removeClass('soldout').addClass('available').find(':radio').removeAttr('disabled');
+                                                    </script>-->
+                                                    <!--
+
+
+
+                                                    <div data-value="lg" class="swatch-element lg available">
+                                                        <input id="swatch-0-lg" type="radio" name="option-0" value="lg" />
+
+                                                        <label for="swatch-0-lg">
+                                                            lg
+
+                                                        </label>
+
+                                                    </div>-->
+                                                    <!--<script>
+                                                        jQuery('.swatch[data-option-index="0"] .lg').removeClass('soldout').addClass('available').find(':radio').removeAttr('disabled');
+                                                    </script>
+
+
+
+
+
+                                                    <script>
+                                                        jQuery('.swatch[data-option-index="0"] .lg').removeClass('soldout').addClass('available').find(':radio').removeAttr('disabled');
+                                                    </script>
+
+
+
+
+
+                                                    <script>
+                                                        jQuery('.swatch[data-option-index="0"] .lg').removeClass('soldout').addClass('available').find(':radio').removeAttr('disabled');
+                                                    </script>
+
+
+
+
+
+                                                    <script>
+                                                        jQuery('.swatch[data-option-index="0"] .lg').removeClass('soldout').addClass('available').find(':radio').removeAttr('disabled');
+                                                    </script>
+
+
+
+
+
+                                                    <script>
+                                                        jQuery('.swatch[data-option-index="0"] .lg').removeClass('soldout').addClass('available').find(':radio').removeAttr('disabled');
+                                                    </script>
+
+
+
+
+
+                                                    <script>
+                                                        jQuery('.swatch[data-option-index="0"] .lg').removeClass('soldout').addClass('available').find(':radio').removeAttr('disabled');
+                                                    </script>
+
+
+
+
+
+                                                    <script>
+                                                        jQuery('.swatch[data-option-index="0"] .lg').removeClass('soldout').addClass('available').find(':radio').removeAttr('disabled');
+                                                    </script>
+
+
+
+
+
+                                                    <script>
+                                                        jQuery('.swatch[data-option-index="0"] .lg').removeClass('soldout').addClass('available').find(':radio').removeAttr('disabled');
+                                                    </script>
+
+
+
+
+
+                                                    <script>
+                                                        jQuery('.swatch[data-option-index="0"] .lg').removeClass('soldout').addClass('available').find(':radio').removeAttr('disabled');
+                                                    </script>-->
+
+
+                                                </div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+                                                <style>
+                                                    label[for="product-select-option-1"] {
+                                                        display: none;
+                                                    }
+
+                                                    #product-select-option-1 {
+                                                        display: none;
+                                                    }
+
+                                                        #product-select-option-1 + .custom-style-select-box {
+                                                            display: none !important;
+                                                        }
+                                                </style>
+                                                <script>$(window).load(function () { $('.selector-wrapper:eq(1)').hide(); });</script>
+
+
+
+
+
+
+
+                                                <!--
+                                                <div class="swatch clearfix" data-option-index="1">
+                                                    <div class="header">Color : </div>
+
+
+
+
+
+
+
+                                                    <div data-value="yellow" class="swatch-element color yellow available">
+                                                        <input id="swatch-1-yellow" type="radio" name="option-1" value="yellow" checked />
+
+                                                        <label for="swatch-1-yellow" style="background-color: yellow;">
+
+                                                        </label>
+
+                                                    </div>
+
+
+                                                    <script>
+                                                        jQuery('.swatch[data-option-index="1"] .yellow').removeClass('soldout').addClass('available').find(':radio').removeAttr('disabled');
+                                                    </script>
+
+
+
+
+
+                                                    <script>
+                                                        jQuery('.swatch[data-option-index="1"] .yellow').removeClass('soldout').addClass('available').find(':radio').removeAttr('disabled');
+                                                    </script>
+
+
+
+
+
+                                                    <script>
+                                                        jQuery('.swatch[data-option-index="1"] .yellow').removeClass('soldout').addClass('available').find(':radio').removeAttr('disabled');
+                                                    </script>
+
+
+
+
+
+
+
+                                                    <div data-value="black" class="swatch-element color black available">
+                                                        <input id="swatch-1-black" type="radio" name="option-1" value="black" />
+
+                                                        <label for="swatch-1-black" style="background-color: black;">
+
+                                                        </label>
+
+                                                    </div>
+
+
+                                                    <script>
+                                                        jQuery('.swatch[data-option-index="1"] .black').removeClass('soldout').addClass('available').find(':radio').removeAttr('disabled');
+                                                    </script>
+
+
+
+
+
+                                                    <script>
+                                                        jQuery('.swatch[data-option-index="1"] .black').removeClass('soldout').addClass('available').find(':radio').removeAttr('disabled');
+                                                    </script>
+
+
+
+
+
+                                                    <script>
+                                                        jQuery('.swatch[data-option-index="1"] .black').removeClass('soldout').addClass('available').find(':radio').removeAttr('disabled');
+                                                    </script>
+
+
+
+
+
+
+
+                                                    <div data-value="brown" class="swatch-element color brown available">
+                                                        <input id="swatch-1-brown" type="radio" name="option-1" value="brown" />
+
+                                                        <label for="swatch-1-brown" style="background-color: brown;">
+
+                                                        </label>
+
+                                                    </div>
+
+
+                                                    <script>
+                                                        jQuery('.swatch[data-option-index="1"] .brown').removeClass('soldout').addClass('available').find(':radio').removeAttr('disabled');
+                                                    </script>
+
+
+
+
+
+                                                    <script>
+                                                        jQuery('.swatch[data-option-index="1"] .brown').removeClass('soldout').addClass('available').find(':radio').removeAttr('disabled');
+                                                    </script>
+
+
+
+
+
+                                                    <script>
+                                                        jQuery('.swatch[data-option-index="1"] .brown').removeClass('soldout').addClass('available').find(':radio').removeAttr('disabled');
+                                                    </script>
+
+
+
+
+
+                                                    <script>
+                                                        jQuery('.swatch[data-option-index="1"] .yellow').removeClass('soldout').addClass('available').find(':radio').removeAttr('disabled');
+                                                    </script>
+
+
+
+
+
+                                                    <script>
+                                                        jQuery('.swatch[data-option-index="1"] .yellow').removeClass('soldout').addClass('available').find(':radio').removeAttr('disabled');
+                                                    </script>
+
+
+
+
+
+                                                    <script>
+                                                        jQuery('.swatch[data-option-index="1"] .yellow').removeClass('soldout').addClass('available').find(':radio').removeAttr('disabled');
+                                                    </script>
+
+
+
+
+
+                                                    <script>
+                                                        jQuery('.swatch[data-option-index="1"] .black').removeClass('soldout').addClass('available').find(':radio').removeAttr('disabled');
+                                                    </script>
+
+
+
+
+
+                                                    <script>
+                                                        jQuery('.swatch[data-option-index="1"] .black').removeClass('soldout').addClass('available').find(':radio').removeAttr('disabled');
+                                                    </script>
+
+
+
+
+
+                                                    <script>
+                                                        jQuery('.swatch[data-option-index="1"] .black').removeClass('soldout').addClass('available').find(':radio').removeAttr('disabled');
+                                                    </script>
+
+
+
+
+
+                                                    <script>
+                                                        jQuery('.swatch[data-option-index="1"] .brown').removeClass('soldout').addClass('available').find(':radio').removeAttr('disabled');
+                                                    </script>
+
+
+
+
+
+                                                    <script>
+                                                        jQuery('.swatch[data-option-index="1"] .brown').removeClass('soldout').addClass('available').find(':radio').removeAttr('disabled');
+                                                    </script>
+
+
+
+
+
+                                                    <script>
+                                                        jQuery('.swatch[data-option-index="1"] .brown').removeClass('soldout').addClass('available').find(':radio').removeAttr('disabled');
+                                                    </script>
+
+
+
+
+
+                                                    <script>
+                                                        jQuery('.swatch[data-option-index="1"] .yellow').removeClass('soldout').addClass('available').find(':radio').removeAttr('disabled');
+                                                    </script>
+
+
+
+
+
+                                                    <script>
+                                                        jQuery('.swatch[data-option-index="1"] .yellow').removeClass('soldout').addClass('available').find(':radio').removeAttr('disabled');
+                                                    </script>
+
+
+
+
+
+                                                    <script>
+                                                        jQuery('.swatch[data-option-index="1"] .yellow').removeClass('soldout').addClass('available').find(':radio').removeAttr('disabled');
+                                                    </script>
+
+
+
+
+
+                                                    <script>
+                                                        jQuery('.swatch[data-option-index="1"] .black').removeClass('soldout').addClass('available').find(':radio').removeAttr('disabled');
+                                                    </script>
+
+
+
+
+
+                                                    <script>
+                                                        jQuery('.swatch[data-option-index="1"] .black').removeClass('soldout').addClass('available').find(':radio').removeAttr('disabled');
+                                                    </script>
+
+
+
+
+
+                                                    <script>
+                                                        jQuery('.swatch[data-option-index="1"] .black').removeClass('soldout').addClass('available').find(':radio').removeAttr('disabled');
+                                                    </script>
+
+
+
+
+
+                                                    <script>
+                                                        jQuery('.swatch[data-option-index="1"] .brown').removeClass('soldout').addClass('available').find(':radio').removeAttr('disabled');
+                                                    </script>
+
+
+
+
+
+                                                    <script>
+                                                        jQuery('.swatch[data-option-index="1"] .brown').removeClass('soldout').addClass('available').find(':radio').removeAttr('disabled');
+                                                    </script>
+
+
+
+
+
+                                                    <script>
+                                                        jQuery('.swatch[data-option-index="1"] .brown').removeClass('soldout').addClass('available').find(':radio').removeAttr('disabled');
+                                                    </script>
+
+
+                                                </div>
+                                                -->
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+                                                <style>
+                                                    label[for="product-select-option-2"] {
+                                                        display: none;
+                                                    }
+
+                                                    #product-select-option-2 {
+                                                        display: none;
+                                                    }
+
+                                                        #product-select-option-2 + .custom-style-select-box {
+                                                            display: none !important;
+                                                        }
+                                                </style>
+                                                <script>$(window).load(function () { $('.selector-wrapper:eq(2)').hide(); });</script>
+
+
+
+
+                                                <!--
+
+                                                <div class="swatch clearfix" data-option-index="2">
+                                                    <div class="header">Material : </div>
+
+
+
+
+
+
+
+                                                    <div data-value="Cotton" class="swatch-element cotton available">
+                                                        <input id="swatch-2-cotton" type="radio" name="option-2" value="Cotton" checked />
+
+                                                        <label for="swatch-2-cotton">
+                                                            Cotton
+
+                                                        </label>
+
+                                                    </div>
+
+
+                                                    <script>
+                                                        jQuery('.swatch[data-option-index="2"] .cotton').removeClass('soldout').addClass('available').find(':radio').removeAttr('disabled');
+                                                    </script>
+
+
+
+
+
+
+
+                                                    <div data-value="Wool" class="swatch-element wool available">
+                                                        <input id="swatch-2-wool" type="radio" name="option-2" value="Wool" />
+
+                                                        <label for="swatch-2-wool">
+                                                            Wool
+
+                                                        </label>
+
+                                                    </div>
+
+
+                                                    <script>
+                                                        jQuery('.swatch[data-option-index="2"] .wool').removeClass('soldout').addClass('available').find(':radio').removeAttr('disabled');
+                                                    </script>
+
+
+
+
+
+
+
+                                                    <div data-value="Fiber" class="swatch-element fiber available">
+                                                        <input id="swatch-2-fiber" type="radio" name="option-2" value="Fiber" />
+
+                                                        <label for="swatch-2-fiber">
+                                                            Fiber
+
+                                                        </label>
+
+                                                    </div>
+
+
+                                                    <script>
+                                                        jQuery('.swatch[data-option-index="2"] .fiber').removeClass('soldout').addClass('available').find(':radio').removeAttr('disabled');
+                                                    </script>
+
+
+
+
+
+                                                    <script>
+                                                        jQuery('.swatch[data-option-index="2"] .cotton').removeClass('soldout').addClass('available').find(':radio').removeAttr('disabled');
+                                                    </script>
+
+
+
+
+
+                                                    <script>
+                                                        jQuery('.swatch[data-option-index="2"] .wool').removeClass('soldout').addClass('available').find(':radio').removeAttr('disabled');
+                                                    </script>
+
+
+
+
+
+                                                    <script>
+                                                        jQuery('.swatch[data-option-index="2"] .fiber').removeClass('soldout').addClass('available').find(':radio').removeAttr('disabled');
+                                                    </script>
+
+
+
+
+
+                                                    <script>
+                                                        jQuery('.swatch[data-option-index="2"] .cotton').removeClass('soldout').addClass('available').find(':radio').removeAttr('disabled');
+                                                    </script>
+
+
+
+
+
+                                                    <script>
+                                                        jQuery('.swatch[data-option-index="2"] .wool').removeClass('soldout').addClass('available').find(':radio').removeAttr('disabled');
+                                                    </script>
+
+
+
+
+
+                                                    <script>
+                                                        jQuery('.swatch[data-option-index="2"] .fiber').removeClass('soldout').addClass('available').find(':radio').removeAttr('disabled');
+                                                    </script>
+
+
+
+
+
+                                                    <script>
+                                                        jQuery('.swatch[data-option-index="2"] .cotton').removeClass('soldout').addClass('available').find(':radio').removeAttr('disabled');
+                                                    </script>
+
+
+
+
+
+                                                    <script>
+                                                        jQuery('.swatch[data-option-index="2"] .wool').removeClass('soldout').addClass('available').find(':radio').removeAttr('disabled');
+                                                    </script>
+
+
+
+
+
+                                                    <script>
+                                                        jQuery('.swatch[data-option-index="2"] .fiber').removeClass('soldout').addClass('available').find(':radio').removeAttr('disabled');
+                                                    </script>
+
+
+
+
+
+                                                    <script>
+                                                        jQuery('.swatch[data-option-index="2"] .cotton').removeClass('soldout').addClass('available').find(':radio').removeAttr('disabled');
+                                                    </script>
+
+
+
+
+
+                                                    <script>
+                                                        jQuery('.swatch[data-option-index="2"] .wool').removeClass('soldout').addClass('available').find(':radio').removeAttr('disabled');
+                                                    </script>
+
+
+
+
+
+                                                    <script>
+                                                        jQuery('.swatch[data-option-index="2"] .fiber').removeClass('soldout').addClass('available').find(':radio').removeAttr('disabled');
+                                                    </script>
+
+
+
+
+
+                                                    <script>
+                                                        jQuery('.swatch[data-option-index="2"] .cotton').removeClass('soldout').addClass('available').find(':radio').removeAttr('disabled');
+                                                    </script>
+
+
+
+
+
+                                                    <script>
+                                                        jQuery('.swatch[data-option-index="2"] .wool').removeClass('soldout').addClass('available').find(':radio').removeAttr('disabled');
+                                                    </script>
+
+
+
+
+
+                                                    <script>
+                                                        jQuery('.swatch[data-option-index="2"] .fiber').removeClass('soldout').addClass('available').find(':radio').removeAttr('disabled');
+                                                    </script>
+
+
+
+
+
+                                                    <script>
+                                                        jQuery('.swatch[data-option-index="2"] .cotton').removeClass('soldout').addClass('available').find(':radio').removeAttr('disabled');
+                                                    </script>
+
+
+
+
+
+                                                    <script>
+                                                        jQuery('.swatch[data-option-index="2"] .wool').removeClass('soldout').addClass('available').find(':radio').removeAttr('disabled');
+                                                    </script>
+
+
+
+
+
+                                                    <script>
+                                                        jQuery('.swatch[data-option-index="2"] .fiber').removeClass('soldout').addClass('available').find(':radio').removeAttr('disabled');
+                                                    </script>
+
+
+
+
+
+                                                    <script>
+                                                        jQuery('.swatch[data-option-index="2"] .cotton').removeClass('soldout').addClass('available').find(':radio').removeAttr('disabled');
+                                                    </script>
+
+
+
+
+
+                                                    <script>
+                                                        jQuery('.swatch[data-option-index="2"] .wool').removeClass('soldout').addClass('available').find(':radio').removeAttr('disabled');
+                                                    </script>
+
+
+
+
+
+                                                    <script>
+                                                        jQuery('.swatch[data-option-index="2"] .fiber').removeClass('soldout').addClass('available').find(':radio').removeAttr('disabled');
+                                                    </script>
+
+
+
+
+
+                                                    <script>
+                                                        jQuery('.swatch[data-option-index="2"] .cotton').removeClass('soldout').addClass('available').find(':radio').removeAttr('disabled');
+                                                    </script>
+
+
+
+
+
+                                                    <script>
+                                                        jQuery('.swatch[data-option-index="2"] .wool').removeClass('soldout').addClass('available').find(':radio').removeAttr('disabled');
+                                                    </script>
+
+
+
+
+
+                                                    <script>
+                                                        jQuery('.swatch[data-option-index="2"] .fiber').removeClass('soldout').addClass('available').find(':radio').removeAttr('disabled');
+                                                    </script>
+
+
+                                                </div>
+
+                                                -->
+
+
+
+
+                                                <script>
+                                                    jQuery(function () {
+                                                        jQuery('.swatch :radio').change(function () {
+                                                            var optionIndex = jQuery(this).closest('.swatch').attr('data-option-index');
+                                                            var optionValue = jQuery(this).val();
+                                                            jQuery(this)
+                                                                .closest('form')
+                                                                .find('.single-option-selector')
+                                                                .eq(optionIndex)
+                                                                .val(optionValue)
+                                                                .trigger('change');
+                                                        });
+                                                    });
+                                                </script>
+                                            </div>
+
+                                            <div class="box-tocart d-flex">
+                                                <!--<span>Qty  :</span>
+                                                <input id="qty" class="input-text qty" name="quantity" min="1" value="1" title="Qty" type="number">-->
+                                                <div class="addtocart__actions">
+                                                    @if (!User.IsInRole(RoleName.CanManageMovies) && User.Identity.IsAuthenticated && Model.book.NumberAvailable >= 1)
+                                                    {
+                                                        <button id="request" class="tocart addtocart" type="submit" title="Add to Cart" value=@Model.book.Id>Send Request</button>
+                                                    }
+
+
+                                                    <script>
+                                                        jQuery('.addtocart').click(function (e) {
+                                                            e.preventDefault();
+                                                            var vm = {
+                                                                movieIds: []
+                                                            };
+                                                            vm.movieIds.push(document.getElementById("request").value);
+                                                            bootbox.confirm("Would you like to send a request?", function (result) {
+                                                                if (result) {
+                                                                    $.ajax({
+                                                                        url: "/api/newRentals",
+                                                                        method: "POST",
+                                                                        data: vm,
+                                                                        success: function () {
+                                                                            bootbox.alert({
+                                                                                message: "Request has been sent",
+                                                                                backdrop: true
+                                                                            });
+                                                                        },
+                                                                        error: function () {
+                                                                            bootbox.alert({
+                                                                                message: "Sorry, The request could not be send",
+                                                                                backdrop: true
+                                                                            });
+                                                                        }
+                                                                    });
+                                                                }
+                                                            });
+                                                        });
+                                                    </script>
+
+                                                </div>
+                                            </div>
+
+                                            <div class="product-addto-links clearfix">
+
+                                                <a class="wishlist" href="../account/login.html" title="Wishlist">
+                                                </a>
+
+                                                <a class="email" href="mailto:admin@hastech.company"></a>
+                                            </div>
+                                            <div class="product__overview">
+
+
+
+
+                                                <!-- <p>En el valle, la vivienda en la vigilancia específica, el reemplazo o la consolidación de la cama, un hombre obsesionado con la reducción de opciones de apuestas ilegales. Wow, mercado muy atractivo, de mis visitantes. Tiempo de desarrollo reciente para odiar, un bar beef tiempo.</p>
+                                                -->
+
+                                            </div>
+                                        </div>
+                                    </form>
+                                </div>
+
+                            </div>
+                        </div>
+
+
+
+                        <div class="product__info__detailed">
+                            <div class="tab__container">
+
+
+                            </div>
+                        </div>
+
+                        <style>
+
+                            .product__info__detailed {
+                                margin-top: 25px;
+                            }
+                        </style>
+
+
+
+
+                        <!-- PRODUCT SECTION START -->
+
+
+
+
+
+
+
+
+
+                        <style>
+
+
+                            #section-product-template.wn__related__product .section__title h2 {
+                                padding: 0;
+                            }
+
+
+
+
+                            .wn__related__product {
+                                margin-top: 100px;
+                            }
+                        </style>
+
+                        <script>
+                            $(".productcategory__slide--2").owlCarousel({
+                                loop: true,
+                                margin: 0,
+                                nav: true,
+                                autoplay: false,
+                                autoplayTimeout: 10000,
+                                items: 3,
+                                navText: ['<i class="zmdi zmdi-chevron-left"></i>', '<i class="zmdi zmdi-chevron-right"></i>'],
+                                dots: false,
+                                lazyLoad: true,
+                                responsive: {
+                                    0: {
+                                        items: 1
+                                    },
+                                    576: {
+                                        items: 2
+                                    },
+                                    768: {
+                                        items: 2
+                                    },
+                                    1920: {
+                                        items: 3
+                                    }
+                                }
+                            });
+                        </script>
+
+
+                        <!--
+
+                        <div class="wn__upsell__product wn__related__product" id="section-product-template">
+
+                            <div class="section__title text-center">
+                                <h2 class="title__be--2">Upsell Porducts</h2>
+                            </div>
+
+                            <div class="row mt--60">
+                                <div class="productcategory__slide--2 arrows_style owl-carousel owl-theme">
+
+
+
+
+
+
+                                    <div class="col-lg-12 col-12">
+                                        <div class="single__product">
+                                            <div class="product product__style--3">
+
+
+
+
+
+
+
+
+
+
+
+                                                <div class="product__thumb">
+
+
+                                                    <a class="first__img" href="affiliate-product.html"><img alt="" src="/Content/cdn.shopify.com/s/files/1/0014/4880/4425/products/2_7c24bc99-b7f5-4f06-a7c0-d8819ae597c6_grandefd3b.jpg?v=1532184116"></a>
+
+                                                    <a class="second__img animation1" href="affiliate-product.html"><img alt="" src="/Content/cdn.shopify.com/s/files/1/0014/4880/4425/products/3_752db213-90c9-421b-a0e3-7e1284342541_grande3873.jpg?v=1532184118"></a>
+
+
+
+
+
+
+                                                    <div class="hot__box">
+                                                        <span class="hot-label">27 % Off</span>
+
+                                                    </div>
+
+
+
+
+                                                </div>
+
+                                                <div class="product__content content--center">
+                                                    <h4><a href="affiliate-product.html">Affiliate Product</a></h4>
+
+
+                                                    <ul class="prize d-flex">
+
+
+                                                        <li><span class=money>$439.00</span></li>
+                                                        <li class="old_prize"><span class=money>$600.00</span></li>
+
+
+
+                                                    </ul>
+
+
+                                                    <div class="action">
+                                                        <div class="actions_inner">
+                                                            <ul class="add_to_links">
+
+
+
+
+
+
+                                                                <li>
+                                                                    <a class="action-cart add_cart cart-item cart" title="Add to Cart" href="https://affiliate-program.amazon.com/">
+                                                                        <i class="bi bi-shopping-bag4"></i>
+                                                                    </a>
+                                                                </li>
+
+
+                                                                <li>
+                                                                    <a class="" href="../account/login.html" title="Wishlist">
+                                                                        <i class="bi bi-heart-beat"></i>
+                                                                    </a>
+                                                                </li>
+
+                                                                <li><a href="affiliate-product.html" title="Link"><i class="bi bi-link"></i></a></li>
+
+                                                                <li>
+                                                                    <a data-toggle="modal" data-target="#exampleModal" title="Quick View"
+                                                                       class="quickview modal-view detail-link" href="javascript:void(0);"
+                                                                       onclick="quiqview('affiliate-product')">
+                                                                        <i class="bi bi-search"></i>
+                                                                    </a>
+                                                                </li>
+
+
+                                                            </ul>
+                                                        </div>
+                                                    </div>
+
+                                                    <div class="product__hover--content">
+
+                                                        <ul class="rating d-flex spr-badge-caption-none">
+                                                            <span class="shopify-product-reviews-badge" data-id="1323780964425"></span>
+                                                        </ul>
+
+                                                    </div>
+
+                                                </div>
+
+
+
+
+                                            </div>
+                                        </div>
+                                    </div>
+
+
+
+
+
+                                    <div class="col-lg-12 col-12">
+                                        <div class="single__product">
+                                            <div class="product product__style--3">
+
+
+
+
+
+
+
+
+
+
+
+                                                <div class="product__thumb">
+
+
+                                                    <a class="first__img" href="algunas-veces-por.html"><img alt="" src="/Content/cdn.shopify.com/s/files/1/0014/4880/4425/products/3_05969ca6-5642-4eee-a98b-bf4c38ba426e_grandecbc2.jpg?v=1532184125"></a>
+
+                                                    <a class="second__img animation1" href="algunas-veces-por.html"><img alt="" src="/Content/cdn.shopify.com/s/files/1/0014/4880/4425/products/4_c1c3a7fe-d9af-4aed-9d37-c9ffb92e5343_grande8d37.jpg?v=1532184126"></a>
+
+
+
+
+
+
+                                                    <div class="hot__box">
+                                                        <span class="hot-label">4 % Off</span>
+
+                                                    </div>
+
+
+
+
+                                                </div>
+
+                                                <div class="product__content content--center">
+                                                    <h4><a href="algunas-veces-por.html">Algunas Veces Por</a></h4>
+
+
+                                                    <ul class="prize d-flex">
+
+
+                                                        <li><span class=money>$519.00</span></li>
+                                                        <li class="old_prize"><span class=money>$539.00</span></li>
+
+
+
+                                                    </ul>
+
+
+                                                    <div class="action">
+                                                        <div class="actions_inner">
+                                                            <ul class="add_to_links">
+
+
+
+                                                                <li>
+                                                                    <a class="action-cart add_cart cart-item cart" title="" href="javascript:void(0);" onclick="Shopify.addItem(12210172100681, 1); return false;">
+                                                                        <i class="bi bi-shopping-bag4"></i>
+                                                                    </a>
+                                                                </li>
+
+
+                                                                <li>
+                                                                    <a class="" href="../account/login.html" title="Wishlist">
+                                                                        <i class="bi bi-heart-beat"></i>
+                                                                    </a>
+                                                                </li>
+
+                                                                <li><a href="algunas-veces-por.html" title="Link"><i class="bi bi-link"></i></a></li>
+
+                                                                <li>
+                                                                    <a data-toggle="modal" data-target="#exampleModal" title="Quick View"
+                                                                       class="quickview modal-view detail-link" href="javascript:void(0);"
+                                                                       onclick="quiqview('algunas-veces-por')">
+                                                                        <i class="bi bi-search"></i>
+                                                                    </a>
+                                                                </li>
+
+
+                                                            </ul>
+                                                        </div>
+                                                    </div>
+
+                                                    <div class="product__hover--content">
+
+                                                        <ul class="rating d-flex spr-badge-caption-none">
+                                                            <span class="shopify-product-reviews-badge" data-id="1323780898889"></span>
+                                                        </ul>
+
+                                                    </div>
+
+                                                </div>
+
+
+
+
+                                            </div>
+                                        </div>
+                                    </div>
+
+
+
+
+
+                                    <div class="col-lg-12 col-12">
+                                        <div class="single__product">
+                                            <div class="product product__style--3">
+
+
+
+
+
+
+
+
+
+
+
+                                                <div class="product__thumb">
+
+
+                                                    <a class="first__img" href="estado-de-desarrollo.html"><img alt="" src="/Content/cdn.shopify.com/s/files/1/0014/4880/4425/products/4_ede6b586-b00a-41a2-869d-eb0d66f161f8_grande4958.jpg?v=1532184233"></a>
+
+                                                    <a class="second__img animation1" href="estado-de-desarrollo.html"><img alt="" src="/Content/cdn.shopify.com/s/files/1/0014/4880/4425/products/5_653d9d31-d920-461b-8150-bdea756a04be_grande5c83.jpg?v=1532184234"></a>
+
+
+
+
+
+
+                                                    <div class="hot__box">
+                                                        <span class="hot-label">13 % Off</span>
+
+                                                    </div>
+
+
+
+
+                                                </div>
+
+                                                <div class="product__content content--center">
+                                                    <h4><a href="estado-de-desarrollo.html">Estado De Desarrollo</a></h4>
+
+
+                                                    <ul class="prize d-flex">
+
+
+                                                        <li><span class=money>$526.00</span></li>
+                                                        <li class="old_prize"><span class=money>$600.00</span></li>
+
+
+
+                                                    </ul>
+
+
+                                                    <div class="action">
+                                                        <div class="actions_inner">
+                                                            <ul class="add_to_links">
+
+
+
+                                                                <li>
+                                                                    <a class="action-cart add_cart cart-item cart" title="" href="javascript:void(0);" onclick="Shopify.addItem(12210169675849, 1); return false;">
+                                                                        <i class="bi bi-shopping-bag4"></i>
+                                                                    </a>
+                                                                </li>
+
+
+                                                                <li>
+                                                                    <a class="" href="../account/login.html" title="Wishlist">
+                                                                        <i class="bi bi-heart-beat"></i>
+                                                                    </a>
+                                                                </li>
+
+                                                                <li><a href="estado-de-desarrollo.html" title="Link"><i class="bi bi-link"></i></a></li>
+
+                                                                <li>
+                                                                    <a data-toggle="modal" data-target="#exampleModal" title="Quick View"
+                                                                       class="quickview modal-view detail-link" href="javascript:void(0);"
+                                                                       onclick="quiqview('estado-de-desarrollo')">
+                                                                        <i class="bi bi-search"></i>
+                                                                    </a>
+                                                                </li>
+
+
+                                                            </ul>
+                                                        </div>
+                                                    </div>
+
+                                                    <div class="product__hover--content">
+
+                                                        <ul class="rating d-flex spr-badge-caption-none">
+                                                            <span class="shopify-product-reviews-badge" data-id="1323780735049"></span>
+                                                        </ul>
+
+                                                    </div>
+
+                                                </div>
+
+
+
+
+                                            </div>
+                                        </div>
+                                    </div>
+
+
+
+
+
+                                    <div class="col-lg-12 col-12">
+                                        <div class="single__product">
+                                            <div class="product product__style--3">
+
+
+
+
+
+
+
+
+
+
+
+                                                <div class="product__thumb">
+
+
+                                                    <a class="first__img" href="resultado-muchos.html"><img alt="" src="/Content/cdn.shopify.com/s/files/1/0014/4880/4425/products/7_4e78e040-cfa6-4e64-a491-5e193d81e4d4_grande4b0a.jpg?v=1533990935"></a>
+
+                                                    <a class="second__img animation1" href="resultado-muchos.html"><img alt="" src="/Content/cdn.shopify.com/s/files/1/0014/4880/4425/products/8_19d87527-bfe5-47ea-83f2-99e31359b322_grande575e.jpg?v=1533990936"></a>
+
+
+
+
+
+
+                                                    <div class="hot__box">
+                                                        <span class="hot-label">5 % Off</span>
+
+                                                    </div>
+
+
+
+
+                                                </div>
+
+                                                <div class="product__content content--center">
+                                                    <h4><a href="resultado-muchos.html">Resultado Muchos</a></h4>
+
+
+                                                    <ul class="prize d-flex">
+
+
+                                                        <li><span class=money>$540.00</span></li>
+                                                        <li class="old_prize"><span class=money>$566.00</span></li>
+
+
+
+                                                    </ul>
+
+
+                                                    <div class="action">
+                                                        <div class="actions_inner">
+                                                            <ul class="add_to_links">
+
+
+
+                                                                <li>
+                                                                    <a class="action-cart add_cart cart-item cart" title="" href="javascript:void(0);" onclick="Shopify.addItem(12210170265673, 1); return false;">
+                                                                        <i class="bi bi-shopping-bag4"></i>
+                                                                    </a>
+                                                                </li>
+
+
+                                                                <li>
+                                                                    <a class="" href="../account/login.html" title="Wishlist">
+                                                                        <i class="bi bi-heart-beat"></i>
+                                                                    </a>
+                                                                </li>
+
+                                                                <li><a href="resultado-muchos.html" title="Link"><i class="bi bi-link"></i></a></li>
+
+                                                                <li>
+                                                                    <a data-toggle="modal" data-target="#exampleModal" title="Quick View"
+                                                                       class="quickview modal-view detail-link" href="javascript:void(0);"
+                                                                       onclick="quiqview('resultado-muchos')">
+                                                                        <i class="bi bi-search"></i>
+                                                                    </a>
+                                                                </li>
+
+
+                                                            </ul>
+                                                        </div>
+                                                    </div>
+
+                                                    <div class="product__hover--content">
+
+                                                        <ul class="rating d-flex spr-badge-caption-none">
+                                                            <span class="shopify-product-reviews-badge" data-id="1323780767817"></span>
+                                                        </ul>
+
+                                                    </div>
+
+                                                </div>
+
+
+
+
+                                            </div>
+                                        </div>
+                                    </div>
+
+
+
+
+                                </div>
+                            </div>
+                        </div>-->
+
+                        <style>
+
+
+                            #section-product-template.wn__upsell__product .section__title h2 {
+                                padding: 0;
+                            }
+
+
+
+
+                            .wn__upsell__product {
+                                margin-top: 100px;
+                            }
+                        </style>
+
+
+                        <script>
+                            $(".productcategory__slide--3").owlCarousel({
+                                loop: true,
+                                margin: 0,
+                                nav: true,
+                                autoplay: false,
+                                autoplayTimeout: 10000,
+                                items: 3,
+                                navText: ['<i class="zmdi zmdi-chevron-left"></i>', '<i class="zmdi zmdi-chevron-right"></i>'],
+                                dots: false,
+                                lazyLoad: true,
+                                responsive: {
+                                    0: {
+                                        items: 1
+                                    },
+                                    576: {
+                                        items: 2
+                                    },
+                                    768: {
+                                        items: 2
+                                    },
+                                    1920: {
+                                        items: 3
+                                    }
+                                }
+                            });
+                        </script>
+
+
+
+                    </div>
+
+                    <div class="col-lg-3 col-12 order-2 order-lg-1 md-mt-40 sm-mt-40">
+                        <div class="shop__sidebar">
+
+                            <aside class="wedget__categories poroduct--cat">
+
+                                <h3 class="wedget__title">Categories</h3>
+
+                                <ul>
+
+                                    
+                                    @for (int i = 0; i < Model.genreName.Length; i++)
+                                    {
+                                        <li class=""><a href="adventure.html">(@Model.genreCount[i])<span class="Amiri">@Model.genreName[i]</span></a></li>
+                                    }
+
+
+
+
+                                </ul>
+                            </aside>
+                            <!--
+
+                            <aside class="wedget__categories poroduct--cat">
+
+                                <h3 class="wedget__title">Vendors</h3>
+
+                                <ul>
+
+
+                                    <li class=""><a href="vendorsa752.html?q=Aurelia">Aurelia</a></li>
+
+                                    <li class=""><a href="vendorsdb2e.html?q=Boighor-demo">Boighor-demo</a></li>
+
+                                    <li class=""><a href="vendors622c.html?q=Creature">Creature</a></li>
+
+                                    <li class=""><a href="vendors105e.html?q=Generic">Generic</a></li>
+
+                                    <li class=""><a href="vendors060f.html?q=Glus">Glus</a></li>
+
+                                </ul>
+                            </aside>
+
+
+                            <aside class="wedget__categories poroduct--cat">
+
+                                <h3 class="wedget__title">Products Types</h3>
+
+                                <ul>
+
+
+
+
+
+                                    <li class=""><a href="types41f9.html?q=English">English</a></li>
+
+
+
+                                    <li class=""><a href="typesaa90.html?q=Math">Math</a></li>
+
+
+
+                                    <li class=""><a href="types214a.html?q=Science">Science</a></li>
+
+
+                                </ul>
+                            </aside>
+
+
+                            <aside class="wedget__categories product-sidebar-color">
+
+                                <h3 class="wedget__title">Color</h3>
+
+                                <ul>
+
+
+
+
+
+
+                                    <li class="red "><a style="background: red no-repeat center; background-size: initial;" href="all/red.html"></a></li>
+
+
+
+
+                                    <li class="green"><a style="background: green no-repeat center; background-size: initial;" href="all/green.html"></a></li>
+
+
+
+
+                                    <li class="blue"><a style="background: blue no-repeat center; background-size: initial;" href="all/blue.html"></a></li>
+
+
+
+
+                                    <li class="white"><a style="background: white no-repeat center; background-size: initial;" href="all/white.html"></a></li>
+
+
+
+
+                                    <li class="yellow "><a style="background: yellow no-repeat center; background-size: initial;" href="all/yellow.html"></a></li>
+
+
+                                </ul>
+                            </aside>
+
+
+                            <aside class="wedget__categories poroduct--cat">
+
+                                <h3 class="wedget__title">Size</h3>
+
+                                <ul>
+
+
+
+
+
+
+                                    <li><a href="all/xl.html">xl</a></li>
+
+
+
+
+                                    <li><a href="all/xs.html">xs</a></li>
+
+
+
+
+                                    <li><a href="all/ml.html">ml</a></li>
+
+
+
+
+                                    <li><a href="all/x.html">X</a></li>
+
+
+
+
+                                    <li><a href="all/m.html">M</a></li>
+
+
+                                </ul>
+                            </aside>
+
+
+                            <aside class="wedget__categories poroduct--tag">
+
+                                <h3 class="wedget__title">Tags</h3>
+
+                                <ul>
+
+
+                                    <li class=""><a href="all/cotton.html">Cotton</a></li>
+
+                                    <li class=""><a href="all/fiber.html">Fiber</a></li>
+
+                                    <li class=""><a href="all/partex.html">Partex</a></li>
+
+                                    <li class=""><a href="all/plastic.html">Plastic</a></li>
+
+                                    <li class=""><a href="all/wood.html">Wood</a></li>
+
+                                    <li class=""><a href="all/wool.html">Wool</a></li>
+
+                                    <li class=""><a href="all/black.html">black</a></li>
+
+                                    <li class=""><a href="all/brown.html">brown</a></li>
+
+                                    <li class=""><a href="all/gray.html">gray</a></li>
+
+                                    <li class=""><a href="all/lg.html">lg</a></li>
+
+                                    <li class=""><a href="all/magenta.html">magenta</a></li>
+
+                                    <li class=""><a href="all/md.html">md</a></li>
+
+                                    <li class=""><a href="all/orange.html">orange</a></li>
+
+                                    <li class=""><a href="all/pink.html">pink</a></li>
+
+                                    <li class=""><a href="all/purple.html">purple</a></li>
+
+                                </ul>
+                            </aside>
+
+
+
+
+                            <aside class="wedget__categories sidebar--banner">
+
+                                <img src="~/Content/cdn.shopify.com/s/files/1/0014/4880/4425/files/banner_left_grande34fc.jpg?v=1532922071" alt="banner images">
+
+
+
+                                <div class="text">
+
+                                    <h2>new products</h2>
+
+
+                                    <h6>save up to <br> <strong>40%</strong> off</h6>
+
+                                </div>
+
+                            </aside>
+                            -->
+
+                        </div>
+
+
+
+                        <script>
+                            $(".shop__sidebar .wedget__categories li.active a").removeAttr("href");
+                        </script>
+
+                    </div>
+
+                </div>
+            </div>
+        </div>
+        <!-- End main Content -->
+
+
+
+
+
+
+
+
+    </div>
+
+
+    <script src="/Content/cdn.shopify.com/shopifycloud/shopify/assets/themes_support/option_selection-fe6b72c2bbdd3369ac0bfefe8648e3c889efca213baefd4cfb0dd9363563831f.js" type="text/javascript"></script>
+    <script>
+  var selectCallback = function(variant, selector) {
+
+    if (variant) {
+      $('.variant-sku').text(variant.sku);
+    }
+    else {
+      $('.variant-sku').empty();
+    }
+
+    timber.productPage({
+      money_format: "<span class=money>${{amount}}</span>",
+      variant: variant,
+      selector: selector
+    });
+  };
+
+  jQuery(function($) {
+    new Shopify.OptionSelectors('productSelect', {
+      product: {"id":1323780997193,"title":"Variable Product","handle":"variable-product","description":"\u003cp\u003eLorem ipsum dolor sit amet, consectetur adipiscing elit. Cras a convallis nisl, at aliquam dolor. Morbi in iaculis nunc. Nulla eu mi at velit imperdiet sollicitudin sed vel risus. Quisque eleifend lorem ipsum, et tempus nulla convallis nec. Nos aseguraremos de que para publicar un comentario. Es un hecho establecido hace demasiado tiempo que un lector se distraerá con el contenido del texto de un sitio mientras que mira su diseño. El punto de usar Lorem Ipsum es que tiene una distribución más o menos normal de las letras, al contrario de usar textos como por ejemplo \"Contenido aquí, contenido aquí\". Estos textos hacen parecerlo un español que se puede leer. Muchos paquetes de autoedición y editores de páginas web usan el Lorem Ipsum como su texto por defecto, y al hacer una búsqueda de \"Lorem Ipsum\" va a dar por resultado muchos sitios web que usan este texto si se encuentran en estado de desarrollo.\u003c\/p\u003e\n[short_description]\n\u003cp\u003eEn el valle, la vivienda en la vigilancia específica, el reemplazo o la consolidación de la cama, un hombre obsesionado con la reducción de opciones de apuestas ilegales. Wow, mercado muy atractivo, de mis visitantes. Tiempo de desarrollo reciente para odiar, un bar beef tiempo.\u003c\/p\u003e\n[\/short_description] [product_description]\n\u003cp\u003eLorem Ipsum es simplemente el texto de relleno de las imprentas y archivos de texto. Mañana, a partir de los botones de opción, sino un poco de dolor. Escribir en el freno ahora. No hay comentarios eran, en el mejor, pero el financiamiento de la atención de la salud o la risa. Bienvenido a aprender más acerca de la cultura popular, y el tiempo, no, ni a crecer fuerte. Miramos a los miembros de televisión por cable de televisión.\u003cbr\u003e\u003cbr\u003ePor otra parte, denunciamos con indignación a los hombres que son engañados y desmoralizados por los encantos del placer del momento, tan cegados por el deseo, que no pueden prever el dolor y la molestia que se va a producir, y la misma culpa es de los que faltan a su deber por debilidad de la voluntad, que es lo mismo que decir que fallan por la fatiga y el dolor. Estos casos son muy simples y fácil de distinguir. En una hora libre, sin las trabas de nuestro poder de elección y cuando nada impida que seamos capaces de hacer lo que más nos gusta, todo placer es de agradecer y cada dolor se puede evitar. Pero en ciertas circunstancias y debido a las exigencias del deber o de las obligaciones de la empresa, estos placeres tienen que ser repudiados y sus molestias aceptadas .El hombre sabio, por lo tanto, siempre tiene en estos asuntos una elección: rechaza placeres para asegurar otros placeres mayores, o de lo contrario evita los dolores para evitar dolores peores.\u003c\/p\u003e\n[\/product_description]","published_at":"2018-07-21T10:05:24-04:00","created_at":"2018-07-21T10:05:24-04:00","vendor":"Krystle","type":"","tags":["Fiber","gray","lg","magenta","md","Partex","Plastic","red","sm","violet","Wood","xl","yellow"],"price":30000,"price_min":30000,"price_max":40000,"available":true,"price_varies":true,"compare_at_price":50000,"compare_at_price_min":50000,"compare_at_price_max":50000,"compare_at_price_varies":false,"variants":[{"id":12210174459977,"title":"sm \/ yellow \/ Cotton","option1":"sm","option2":"yellow","option3":"Cotton","sku":"","requires_shipping":true,"taxable":true,"featured_image":null,"available":true,"name":"Variable Product - sm \/ yellow \/ Cotton","public_title":"sm \/ yellow \/ Cotton","options":["sm","yellow","Cotton"],"price":40000,"weight":0,"compare_at_price":50000,"inventory_management":null,"barcode":""},{"id":12210174492745,"title":"sm \/ yellow \/ Wool","option1":"sm","option2":"yellow","option3":"Wool","sku":"","requires_shipping":true,"taxable":true,"featured_image":null,"available":true,"name":"Variable Product - sm \/ yellow \/ Wool","public_title":"sm \/ yellow \/ Wool","options":["sm","yellow","Wool"],"price":38500,"weight":0,"compare_at_price":50000,"inventory_management":null,"barcode":""},{"id":12210174525513,"title":"sm \/ yellow \/ Fiber","option1":"sm","option2":"yellow","option3":"Fiber","sku":"","requires_shipping":true,"taxable":true,"featured_image":null,"available":true,"name":"Variable Product - sm \/ yellow \/ Fiber","public_title":"sm \/ yellow \/ Fiber","options":["sm","yellow","Fiber"],"price":37500,"weight":0,"compare_at_price":50000,"inventory_management":null,"barcode":""},{"id":12210174558281,"title":"sm \/ black \/ Cotton","option1":"sm","option2":"black","option3":"Cotton","sku":"","requires_shipping":true,"taxable":true,"featured_image":null,"available":true,"name":"Variable Product - sm \/ black \/ Cotton","public_title":"sm \/ black \/ Cotton","options":["sm","black","Cotton"],"price":37100,"weight":0,"compare_at_price":50000,"inventory_management":null,"barcode":""},{"id":12210174591049,"title":"sm \/ black \/ Wool","option1":"sm","option2":"black","option3":"Wool","sku":"","requires_shipping":true,"taxable":true,"featured_image":null,"available":true,"name":"Variable Product - sm \/ black \/ Wool","public_title":"sm \/ black \/ Wool","options":["sm","black","Wool"],"price":36800,"weight":0,"compare_at_price":50000,"inventory_management":null,"barcode":""},{"id":12210174623817,"title":"sm \/ black \/ Fiber","option1":"sm","option2":"black","option3":"Fiber","sku":"","requires_shipping":true,"taxable":true,"featured_image":null,"available":true,"name":"Variable Product - sm \/ black \/ Fiber","public_title":"sm \/ black \/ Fiber","options":["sm","black","Fiber"],"price":36400,"weight":0,"compare_at_price":50000,"inventory_management":null,"barcode":""},{"id":12210174656585,"title":"sm \/ brown \/ Cotton","option1":"sm","option2":"brown","option3":"Cotton","sku":"","requires_shipping":true,"taxable":true,"featured_image":null,"available":true,"name":"Variable Product - sm \/ brown \/ Cotton","public_title":"sm \/ brown \/ Cotton","options":["sm","brown","Cotton"],"price":36100,"weight":0,"compare_at_price":50000,"inventory_management":null,"barcode":""},{"id":12210174689353,"title":"sm \/ brown \/ Wool","option1":"sm","option2":"brown","option3":"Wool","sku":"","requires_shipping":true,"taxable":true,"featured_image":null,"available":true,"name":"Variable Product - sm \/ brown \/ Wool","public_title":"sm \/ brown \/ Wool","options":["sm","brown","Wool"],"price":35800,"weight":0,"compare_at_price":50000,"inventory_management":null,"barcode":""},{"id":12210174722121,"title":"sm \/ brown \/ Fiber","option1":"sm","option2":"brown","option3":"Fiber","sku":"","requires_shipping":true,"taxable":true,"featured_image":null,"available":true,"name":"Variable Product - sm \/ brown \/ Fiber","public_title":"sm \/ brown \/ Fiber","options":["sm","brown","Fiber"],"price":35500,"weight":0,"compare_at_price":50000,"inventory_management":null,"barcode":""},{"id":12210174754889,"title":"md \/ yellow \/ Cotton","option1":"md","option2":"yellow","option3":"Cotton","sku":"","requires_shipping":true,"taxable":true,"featured_image":null,"available":true,"name":"Variable Product - md \/ yellow \/ Cotton","public_title":"md \/ yellow \/ Cotton","options":["md","yellow","Cotton"],"price":35100,"weight":0,"compare_at_price":50000,"inventory_management":null,"barcode":""},{"id":12210174787657,"title":"md \/ yellow \/ Wool","option1":"md","option2":"yellow","option3":"Wool","sku":"","requires_shipping":true,"taxable":true,"featured_image":null,"available":true,"name":"Variable Product - md \/ yellow \/ Wool","public_title":"md \/ yellow \/ Wool","options":["md","yellow","Wool"],"price":34800,"weight":0,"compare_at_price":50000,"inventory_management":null,"barcode":""},{"id":12210174820425,"title":"md \/ yellow \/ Fiber","option1":"md","option2":"yellow","option3":"Fiber","sku":"","requires_shipping":true,"taxable":true,"featured_image":null,"available":true,"name":"Variable Product - md \/ yellow \/ Fiber","public_title":"md \/ yellow \/ Fiber","options":["md","yellow","Fiber"],"price":34500,"weight":0,"compare_at_price":50000,"inventory_management":null,"barcode":""},{"id":12210174853193,"title":"md \/ black \/ Cotton","option1":"md","option2":"black","option3":"Cotton","sku":"","requires_shipping":true,"taxable":true,"featured_image":null,"available":true,"name":"Variable Product - md \/ black \/ Cotton","public_title":"md \/ black \/ Cotton","options":["md","black","Cotton"],"price":34100,"weight":0,"compare_at_price":50000,"inventory_management":null,"barcode":""},{"id":12210174885961,"title":"md \/ black \/ Wool","option1":"md","option2":"black","option3":"Wool","sku":"","requires_shipping":true,"taxable":true,"featured_image":null,"available":true,"name":"Variable Product - md \/ black \/ Wool","public_title":"md \/ black \/ Wool","options":["md","black","Wool"],"price":33800,"weight":0,"compare_at_price":50000,"inventory_management":null,"barcode":""},{"id":12210174918729,"title":"md \/ black \/ Fiber","option1":"md","option2":"black","option3":"Fiber","sku":"","requires_shipping":true,"taxable":true,"featured_image":null,"available":true,"name":"Variable Product - md \/ black \/ Fiber","public_title":"md \/ black \/ Fiber","options":["md","black","Fiber"],"price":33500,"weight":0,"compare_at_price":50000,"inventory_management":null,"barcode":""},{"id":12210174951497,"title":"md \/ brown \/ Cotton","option1":"md","option2":"brown","option3":"Cotton","sku":"","requires_shipping":true,"taxable":true,"featured_image":null,"available":true,"name":"Variable Product - md \/ brown \/ Cotton","public_title":"md \/ brown \/ Cotton","options":["md","brown","Cotton"],"price":33100,"weight":0,"compare_at_price":50000,"inventory_management":null,"barcode":""},{"id":12210174984265,"title":"md \/ brown \/ Wool","option1":"md","option2":"brown","option3":"Wool","sku":"","requires_shipping":true,"taxable":true,"featured_image":null,"available":true,"name":"Variable Product - md \/ brown \/ Wool","public_title":"md \/ brown \/ Wool","options":["md","brown","Wool"],"price":32800,"weight":0,"compare_at_price":50000,"inventory_management":null,"barcode":""},{"id":12210175017033,"title":"md \/ brown \/ Fiber","option1":"md","option2":"brown","option3":"Fiber","sku":"","requires_shipping":true,"taxable":true,"featured_image":null,"available":true,"name":"Variable Product - md \/ brown \/ Fiber","public_title":"md \/ brown \/ Fiber","options":["md","brown","Fiber"],"price":32500,"weight":0,"compare_at_price":50000,"inventory_management":null,"barcode":""},{"id":12210175049801,"title":"lg \/ yellow \/ Cotton","option1":"lg","option2":"yellow","option3":"Cotton","sku":"","requires_shipping":true,"taxable":true,"featured_image":null,"available":true,"name":"Variable Product - lg \/ yellow \/ Cotton","public_title":"lg \/ yellow \/ Cotton","options":["lg","yellow","Cotton"],"price":32100,"weight":0,"compare_at_price":50000,"inventory_management":null,"barcode":""},{"id":12210175082569,"title":"lg \/ yellow \/ Wool","option1":"lg","option2":"yellow","option3":"Wool","sku":"","requires_shipping":true,"taxable":true,"featured_image":null,"available":true,"name":"Variable Product - lg \/ yellow \/ Wool","public_title":"lg \/ yellow \/ Wool","options":["lg","yellow","Wool"],"price":31800,"weight":0,"compare_at_price":50000,"inventory_management":null,"barcode":""},{"id":12210175115337,"title":"lg \/ yellow \/ Fiber","option1":"lg","option2":"yellow","option3":"Fiber","sku":"","requires_shipping":true,"taxable":true,"featured_image":null,"available":true,"name":"Variable Product - lg \/ yellow \/ Fiber","public_title":"lg \/ yellow \/ Fiber","options":["lg","yellow","Fiber"],"price":31500,"weight":0,"compare_at_price":50000,"inventory_management":null,"barcode":""},{"id":12210175148105,"title":"lg \/ black \/ Cotton","option1":"lg","option2":"black","option3":"Cotton","sku":"","requires_shipping":true,"taxable":true,"featured_image":null,"available":true,"name":"Variable Product - lg \/ black \/ Cotton","public_title":"lg \/ black \/ Cotton","options":["lg","black","Cotton"],"price":31100,"weight":0,"compare_at_price":50000,"inventory_management":null,"barcode":""},{"id":12210175180873,"title":"lg \/ black \/ Wool","option1":"lg","option2":"black","option3":"Wool","sku":"","requires_shipping":true,"taxable":true,"featured_image":null,"available":true,"name":"Variable Product - lg \/ black \/ Wool","public_title":"lg \/ black \/ Wool","options":["lg","black","Wool"],"price":30800,"weight":0,"compare_at_price":50000,"inventory_management":null,"barcode":""},{"id":12210175213641,"title":"lg \/ black \/ Fiber","option1":"lg","option2":"black","option3":"Fiber","sku":"","requires_shipping":true,"taxable":true,"featured_image":null,"available":true,"name":"Variable Product - lg \/ black \/ Fiber","public_title":"lg \/ black \/ Fiber","options":["lg","black","Fiber"],"price":30500,"weight":0,"compare_at_price":50000,"inventory_management":null,"barcode":""},{"id":12210175246409,"title":"lg \/ brown \/ Cotton","option1":"lg","option2":"brown","option3":"Cotton","sku":"","requires_shipping":true,"taxable":true,"featured_image":null,"available":true,"name":"Variable Product - lg \/ brown \/ Cotton","public_title":"lg \/ brown \/ Cotton","options":["lg","brown","Cotton"],"price":30300,"weight":0,"compare_at_price":50000,"inventory_management":null,"barcode":""},{"id":12210175279177,"title":"lg \/ brown \/ Wool","option1":"lg","option2":"brown","option3":"Wool","sku":"","requires_shipping":true,"taxable":true,"featured_image":null,"available":true,"name":"Variable Product - lg \/ brown \/ Wool","public_title":"lg \/ brown \/ Wool","options":["lg","brown","Wool"],"price":30100,"weight":0,"compare_at_price":50000,"inventory_management":null,"barcode":""},{"id":12210175311945,"title":"lg \/ brown \/ Fiber","option1":"lg","option2":"brown","option3":"Fiber","sku":"","requires_shipping":true,"taxable":true,"featured_image":null,"available":true,"name":"Variable Product - lg \/ brown \/ Fiber","public_title":"lg \/ brown \/ Fiber","options":["lg","brown","Fiber"],"price":30000,"weight":0,"compare_at_price":50000,"inventory_management":null,"barcode":""}],"images":["\/\/cdn.shopify.com\/s\/files\/1\/0014\/4880\/4425\/products\/1_b613fbc7-a5da-4b82-aaf8-7781e7ac0e47.jpg?v=1532923647","#\/\/cdn.shopify.com\/s\/files\/1\/0014\/4880\/4425\/products\/2_9a6946d2-d8bd-4b8e-bc7a-f9280f5d6c66.jpg?v=1532923648","#\/\/cdn.shopify.com\/s\/files\/1\/0014\/4880\/4425\/products\/3_84478d15-f990-4897-82bc-2e44ee290b49.jpg?v=1532923649","#\/\/cdn.shopify.com\/s\/files\/1\/0014\/4880\/4425\/products\/4_7c393a1b-9d79-4952-8b4b-032418500070.jpg?v=1532923650","\/\/cdn.shopify.com\/s\/files\/1\/0014\/4880\/4425\/products\/5_86de2eb4-78d2-4d78-86a7-c06e7c0d3408.jpg?v=1532923651"],"featured_image":"\/\/cdn.shopify.com\/s\/files\/1\/0014\/4880\/4425\/products\/1_b613fbc7-a5da-4b82-aaf8-7781e7ac0e47.jpg?v=1532923647","options":["Size","Color","Material"],"media":[{"alt":null,"id":636725493833,"position":1,"preview_image":{"aspect_ratio":0.796,"height":565,"width":450,"src":"https:\/\/cdn.shopify.com\/s\/files\/1\/0014\/4880\/4425\/products\/1_b613fbc7-a5da-4b82-aaf8-7781e7ac0e47.jpg?v=1569051150"},"aspect_ratio":0.796,"height":565,"media_type":"image","src":"https:\/\/cdn.shopify.com\/s\/files\/1\/0014\/4880\/4425\/products\/1_b613fbc7-a5da-4b82-aaf8-7781e7ac0e47.jpg?v=1569051150","width":450},{"alt":null,"id":636725526601,"position":2,"preview_image":{"aspect_ratio":0.796,"height":565,"width":450,"src":"https:\/\/cdn.shopify.com\/s\/files\/1\/0014\/4880\/4425\/products\/2_9a6946d2-d8bd-4b8e-bc7a-f9280f5d6c66.jpg?v=1569051150"},"aspect_ratio":0.796,"height":565,"media_type":"image","src":"https:\/\/cdn.shopify.com\/s\/files\/1\/0014\/4880\/4425\/products\/2_9a6946d2-d8bd-4b8e-bc7a-f9280f5d6c66.jpg?v=1569051150","width":450},{"alt":null,"id":636725657673,"position":3,"preview_image":{"aspect_ratio":0.796,"height":565,"width":450,"src":"https:\/\/cdn.shopify.com\/s\/files\/1\/0014\/4880\/4425\/products\/3_84478d15-f990-4897-82bc-2e44ee290b49.jpg?v=1569051150"},"aspect_ratio":0.796,"height":565,"media_type":"image","src":"https:\/\/cdn.shopify.com\/s\/files\/1\/0014\/4880\/4425\/products\/3_84478d15-f990-4897-82bc-2e44ee290b49.jpg?v=1569051150","width":450},{"alt":null,"id":636725952585,"position":4,"preview_image":{"aspect_ratio":0.796,"height":565,"width":450,"src":"https:\/\/cdn.shopify.com\/s\/files\/1\/0014\/4880\/4425\/products\/4_7c393a1b-9d79-4952-8b4b-032418500070.jpg?v=1569051150"},"aspect_ratio":0.796,"height":565,"media_type":"image","src":"https:\/\/cdn.shopify.com\/s\/files\/1\/0014\/4880\/4425\/products\/4_7c393a1b-9d79-4952-8b4b-032418500070.jpg?v=1569051150","width":450},{"alt":null,"id":636726018121,"position":5,"preview_image":{"aspect_ratio":0.796,"height":565,"width":450,"src":"https:\/\/cdn.shopify.com\/s\/files\/1\/0014\/4880\/4425\/products\/5_86de2eb4-78d2-4d78-86a7-c06e7c0d3408.jpg?v=1569051150"},"aspect_ratio":0.796,"height":565,"media_type":"image","src":"https:\/\/cdn.shopify.com\/s\/files\/1\/0014\/4880\/4425\/products\/5_86de2eb4-78d2-4d78-86a7-c06e7c0d3408.jpg?v=1569051150","width":450}],"content":"\u003cp\u003eLorem ipsum dolor sit amet, consectetur adipiscing elit. Cras a convallis nisl, at aliquam dolor. Morbi in iaculis nunc. Nulla eu mi at velit imperdiet sollicitudin sed vel risus. Quisque eleifend lorem ipsum, et tempus nulla convallis nec. Nos aseguraremos de que para publicar un comentario. Es un hecho establecido hace demasiado tiempo que un lector se distraerá con el contenido del texto de un sitio mientras que mira su diseño. El punto de usar Lorem Ipsum es que tiene una distribución más o menos normal de las letras, al contrario de usar textos como por ejemplo \"Contenido aquí, contenido aquí\". Estos textos hacen parecerlo un español que se puede leer. Muchos paquetes de autoedición y editores de páginas web usan el Lorem Ipsum como su texto por defecto, y al hacer una búsqueda de \"Lorem Ipsum\" va a dar por resultado muchos sitios web que usan este texto si se encuentran en estado de desarrollo.\u003c\/p\u003e\n[short_description]\n\u003cp\u003eEn el valle, la vivienda en la vigilancia específica, el reemplazo o la consolidación de la cama, un hombre obsesionado con la reducción de opciones de apuestas ilegales. Wow, mercado muy atractivo, de mis visitantes. Tiempo de desarrollo reciente para odiar, un bar beef tiempo.\u003c\/p\u003e\n[\/short_description] [product_description]\n\u003cp\u003eLorem Ipsum es simplemente el texto de relleno de las imprentas y archivos de texto. Mañana, a partir de los botones de opción, sino un poco de dolor. Escribir en el freno ahora. No hay comentarios eran, en el mejor, pero el financiamiento de la atención de la salud o la risa. Bienvenido a aprender más acerca de la cultura popular, y el tiempo, no, ni a crecer fuerte. Miramos a los miembros de televisión por cable de televisión.\u003cbr\u003e\u003cbr\u003ePor otra parte, denunciamos con indignación a los hombres que son engañados y desmoralizados por los encantos del placer del momento, tan cegados por el deseo, que no pueden prever el dolor y la molestia que se va a producir, y la misma culpa es de los que faltan a su deber por debilidad de la voluntad, que es lo mismo que decir que fallan por la fatiga y el dolor. Estos casos son muy simples y fácil de distinguir. En una hora libre, sin las trabas de nuestro poder de elección y cuando nada impida que seamos capaces de hacer lo que más nos gusta, todo placer es de agradecer y cada dolor se puede evitar. Pero en ciertas circunstancias y debido a las exigencias del deber o de las obligaciones de la empresa, estos placeres tienen que ser repudiados y sus molestias aceptadas .El hombre sabio, por lo tanto, siempre tiene en estos asuntos una elección: rechaza placeres para asegurar otros placeres mayores, o de lo contrario evita los dolores para evitar dolores peores.\u003c\/p\u003e\n[\/product_description]"},
+      onVariantSelected: selectCallback,
+      enableHistoryState: true
+    });
+
+    // Add label if only one product option and it isn't 'Title'. Could be 'Size'.
+
+
+    // Hide selectors if we only have 1 variant and its title contains 'Default'.
+
+  });
+    </script>
+
+
+</main>

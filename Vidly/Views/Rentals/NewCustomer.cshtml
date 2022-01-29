@@ -1,0 +1,112 @@
+﻿@model Vidly.Models.Book
+
+@{
+    ViewBag.Title = "New Rental Form";
+}
+
+<h2 class="urdu" style="text-align:center;">درخواست  فارم</h2>
+
+<form class="urdu" dir="rtl" id="newRental">
+    
+    <div class="form-group">
+        <label>کتاب  کا  نام  /  نمبر</label>
+        <div class="tt-container">
+            @if (Model.Id == 0)
+            {
+                <input dir="rtl" id="movie" name="movie" data-rule-atLeastOneMovie="true" type="text" value="" class="form-control" />
+            }
+            else
+            {
+                <input id="request" hidden type="number" value="@Model.Id" />
+                <input dir="rtl" readonly  type="text" value=@Model.Name class="form-control" />
+            }
+        </div>
+    </div>
+
+    <div class="row" style="display:flex;">
+        <div class="col-md-4 col-sm-4">
+            <ul id="movies" class="list-group"></ul>
+        </div>
+    </div>
+
+    <button class="btn btn-primary">Submit</button>
+</form>
+<p>
+    <a href="@Url.Action("Index", "Home")" class="btn btn-primary">
+        <i class="fa fa-arrow-left"></i>
+    </a>
+</p>
+@section scripts
+{
+    @Scripts.Render("~/bundles/jqueryval")
+
+    <script>
+        $(document).ready(function () {
+
+            var vm = {
+                movieIds: []
+            };
+
+            
+
+            var movies = new Bloodhound({
+                datumTokenizer: Bloodhound.tokenizers.obj.whitespace('name'),
+                queryTokenizer: Bloodhound.tokenizers.whitespace,
+                remote: {
+                    url: '/api/books?query=%QUERY',
+                    wildcard: '%QUERY'
+                }
+            });
+
+            $('#movie').typeahead({
+                minLength: 1,
+                highlight: true
+            }, {
+                name: 'movies',
+                display: 'name',
+                source: movies
+            }).on("typeahead:select", function (e, movie) {
+                $("#movies").append("<li class='list-group-item'>" + movie.name + "</li>");
+
+                $("#movie").typeahead("val", "");
+
+                vm.movieIds.push(movie.id);
+            });
+
+           
+
+            $.validator.addMethod("atLeastOneMovie", function () {
+                return vm.movieIds.length > 0;
+            }, "برائے  مہربانی  کم  سے  کم  ایک  کتاب  منتخب  کیجیے");
+
+            var validator = $("#newRental").validate({
+                submitHandler: function () {
+                    $.ajax({
+                        url: "/api/newRentals",
+                        method: "post",
+                        data: vm
+                    })
+                    .done(function () {
+                        toastr.success("درخواست  بھیج  دی  گئی۔");
+
+                        $("#movie").typeahead("val", "");
+                        $("#movies").empty();
+
+                        vm = { movieIds: [] };
+
+                        validator.resetForm();
+                    })
+                    .fail(function () {
+                        toastr.error("Something unexpected happened.");
+                    });
+
+                    return false;
+                }
+            });
+            if (document.getElementById("request").value != 0) {
+                vm.movieIds.push(document.getElementById("request").value);
+                
+            }
+        });
+    </script>
+}

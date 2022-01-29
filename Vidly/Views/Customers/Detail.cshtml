@@ -1,0 +1,35 @@
+﻿@model Vidly.Models.RegisterViewModel
+@{
+    ViewBag.Title = "Register";
+}
+
+
+<h2 class="urdu" style="text-align:center;">@Model.FirstName</h2>
+
+<div class="urdu" style="direction:rtl;">
+    <div class="col-md-12 form-group">
+        @Html.LabelFor(m => m.LastName)
+        @Html.TextBoxFor(m => m.LastName, new { @class = "form-control", @readonly = "true" })
+    </div>
+    <div class="col-md-12 form-group">
+        @Html.LabelFor(m => m.Email)
+        @Html.TextBoxFor(m => m.Email, new { @class = "form-control", dir = "ltr", @readonly="true" })
+    </div>
+    <div class="col-md-12 form-group">
+        @Html.LabelFor(m => m.Phone)
+        @Html.TextBoxFor(m => m.Phone, new { @class = "form-control", dir = "ltr", @readonly="true" })
+    </div>
+    <div class="col-md-12 form-group">
+        @Html.LabelFor(m => m.Password)
+        @Html.TextBoxFor(m => m.Password, new { @class = "form-control", dir = "ltr", @readonly="true" })
+
+    </div>
+</div>
+<br />
+<p>
+    <a href="@Url.Action("Index", "Home")" class="btn btn-primary">
+        <i class="fa fa-arrow-left"></i>
+    </a>
+</p>
+
+

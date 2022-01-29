@@ -1,0 +1,145 @@
+﻿/* Chrome, Safari, Edge, Opera For removing arrows in input type number*/
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+    -webkit-appearance: none;
+    margin: 0;
+}
+
+/* Firefox */
+input[type=number] {
+    -moz-appearance: textfield;
+}
+
+body {
+    padding-top: 50px;
+    padding-bottom: 20px;
+}
+
+/* Set padding to keep content from hitting the edges */
+.body-content {
+    padding-left: 15px;
+    padding-right: 15px;
+}
+
+/* Override the default bootstrap behavior where horizontal description lists 
+   will truncate terms that are too long to fit in the left column 
+*/
+.dl-horizontal dt {
+    white-space: normal;
+}
+
+/* Set width on the form input elements since they're 100% wide by default */
+input,
+select,
+textarea {
+    max-width: 280px;
+}
+
+.field-validation-error,
+label.error {
+    color: red;
+}
+
+.input-validation-error,
+input.error {
+    border: 2px solid red;
+}
+
+/* Overrides */
+.navbar-inverse .notifications{
+    position: relative;
+}
+
+.navbar-inverse .notifications .badge{
+    position: absolute;
+    top: 8px;
+    right: 2px;
+}
+
+ul.notifications {
+    list-style: none;
+    padding-left: 0;
+}
+
+ul.notifications > li {
+    border-bottom: 1px solid #ddd;
+    padding: 10px 0;
+}
+
+ul.notifications > li:last-child {
+    border-bottom: none;
+}
+
+ul.notifications .highlight {
+    font-weight: bold;
+}
+
+/*Hover Button*/
+/*.dropbtn {
+    background-color: #4CAF50;
+    color: white;
+    padding: 16px;
+    font-size: 16px;
+    border: none;
+}*/
+
+.dropdown {
+    position: relative;
+    display: inline-block;
+}
+
+.dropdown-content {
+    display: none;
+    position: absolute;
+    background-color: #f1f1f1;
+    min-width: 160px;
+    box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+    z-index: 1;
+}
+
+    .dropdown-content a {
+        color: black;
+        padding: 12px 16px;
+        text-decoration: none;
+        display: block;
+    }
+
+        .dropdown-content a:hover {
+            background-color: #ddd;
+        }
+
+.dropdown:hover .dropdown-content {
+    display: block;
+}
+
+/*.dropdown:hover .dropbtn {
+    background-color: #3e8e41;
+}*/
+
+.btn-green {
+    color: #ffffff;
+    background-color: #239a26;
+    border-color: #2b7531;
+}
+.btn-green:hover, .btn-green:focus, .btn-group.open .dropdown-toggle.btn-green {
+    background-color: #28b62c;
+    border-color: #23a127;
+}
+.btn-green:hover {
+    color: #ffffff;
+}
+
+
+.btn-red {
+    color: #ffffff;
+    background-color: #c71f15;
+    border-color: #77231e;
+}
+.btn-red:hover, .btn-red:focus, .btn-group.open .dropdown-toggle.btn-red {
+    background-color: #ff4136;
+    border-color: #ff291c;
+}
+.btn-red:hover {
+    color: #ffffff;
+}
+

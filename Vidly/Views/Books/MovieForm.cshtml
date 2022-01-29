@@ -1,0 +1,95 @@
+﻿@model Vidly.ViewModels.MovieFormViewModel
+
+@{
+    ViewBag.Title = Model.Title;
+}
+
+<h2 class="urdu" style="text-align:center;">@Model.Title</h2>
+
+@using (Html.BeginForm("Save", "Books", FormMethod.Post, new { dir = "rtl", @class = "urdu" }))
+{
+    @Html.ValidationSummary(true, "Please fix the following errors.")
+    <div class="col-md-4 form-group" style="float: right !important;">
+        @Html.LabelFor(m => m.Book.Name)
+        @Html.TextBoxFor(m => m.Book.Name, new { @class = "form-control", dir = "rtl", placeholder = "نام", style = "height:51px;" })
+        @Html.ValidationMessageFor(m => m.Book.Name)
+    </div>
+    <div class="col-md-4 form-group" style="float: right !important;">
+        @Html.LabelFor(m => m.Book.Author)
+        @Html.TextBoxFor(m => m.Book.Author, new { @class = "form-control", dir = "rtl", placeholder = "مصنف", style = "height:51px;" })
+        @Html.ValidationMessageFor(m => m.Book.Author)
+    </div>
+    <div class="col-md-4 form-group" style="float: right !important;">
+        @Html.LabelFor(m => m.Book.GenreId)
+        @Html.DropDownListFor(m => m.Book.GenreId, new SelectList(Model.Genres, "Id", "Name"), "موضوع", new { @class = "form-control", dir = "rtl", style = "font-size:22px; height:51px;" })
+        @Html.ValidationMessageFor(m => m.Book.GenreId)
+    </div>
+    @*<div class="form-group">
+            @Html.LabelFor(m => m.ReleaseDate)
+            @Html.TextBoxFor(m => m.ReleaseDate, "{0:d MMM yyyy}", new { @class = "form-control", dir="rtl" })
+            @Html.ValidationMessageFor(m => m.ReleaseDate)
+        </div>*@
+    @*<div class="form-group">
+            @Html.LabelFor(m => m.GenreId)
+            @Html.DropDownListFor(m => m.GenreId, new SelectList(Model.Genres, "Id", "Name"), "", new { @class = "form-control", style = "font-size: inherit;" })
+            @Html.ValidationMessageFor(m => m.GenreId)
+        </div>*@
+    <div class="col-md-4 form-group" style="float: right !important;">
+        @Html.LabelFor(m => m.Book.NumberInStock)
+        @Html.TextBoxFor(m => m.Book.NumberInStock, new { @class = "form-control", dir = "rtl", placeholder = "تعداد", style = "height:51px;" })
+        @Html.ValidationMessageFor(m => m.Book.NumberInStock)
+    </div>
+    <div class="col-md-4 form-group" style="float: right !important;">
+        @Html.LabelFor(m => m.Book.Edition)
+        @Html.TextBoxFor(m => m.Book.Edition, new { @class = "form-control", dir = "rtl", placeholder = "ایڈیشن", style = "height:51px;" })
+        @Html.ValidationMessageFor(m => m.Book.Edition)
+    </div>
+    <div class="col-md-4 form-group" style="float: right !important;">
+        @Html.LabelFor(m => m.Book.Publisher)
+        @Html.TextBoxFor(m => m.Book.Publisher, new { @class = "form-control", dir = "rtl", placeholder = "مکتبہ", style = "height:51px;" })
+        @Html.ValidationMessageFor(m => m.Book.Publisher)
+    </div>
+    <div class="col-md-4 form-group" style="float: right !important;">
+        @Html.LabelFor(m => m.Book.Price)
+        @Html.TextBoxFor(m => m.Book.Price, new { @class = "form-control", dir = "rtl", placeholder = "قیمت", style = "height:51px;" })
+        @Html.ValidationMessageFor(m => m.Book.Price)
+    </div>
+    <div class="col-md-4 form-group" style="float: right !important;">
+        @Html.LabelFor(m => m.Book.Translator)
+        @Html.TextBoxFor(m => m.Book.Translator, new { @class = "form-control", dir = "rtl", placeholder = "مترجم", style = "height:51px;" })
+        @Html.ValidationMessageFor(m => m.Book.Translator)
+    </div>
+    <div class="col-md-4 form-group" style="float: right !important;">
+        @Html.LabelFor(m => m.Book.Set)
+        @Html.TextBoxFor(m => m.Book.Set, new { @class = "form-control", dir = "rtl", placeholder = "جلدیں", style = "height:51px;" })
+        @Html.ValidationMessageFor(m => m.Book.Set)
+    </div>
+    <div class="col-md-4 form-group" style="float: right !important;">
+        @Html.LabelFor(m => m.Book.Rack)
+        @Html.TextBoxFor(m => m.Book.Rack, new { @class = "form-control", dir = "rtl", placeholder = "ریک", style = "height:51px;" })
+        @Html.ValidationMessageFor(m => m.Book.Rack)
+    </div>
+    <div class="col-md-4 form-group" style="float: right !important;">
+        @Html.LabelFor(m => m.Book.Column)
+        @Html.TextBoxFor(m => m.Book.Column, new { @class = "form-control", dir = "rtl", placeholder = "کولم", style = "height:51px;" })
+        @Html.ValidationMessageFor(m => m.Book.Column)
+    </div>
+
+    @Html.HiddenFor(m => m.Id)
+    @Html.HiddenFor(m => m.Book.NumberAvailable)
+    @Html.AntiForgeryToken()
+    <div class="col-md-12 form-group text-center">
+        <button type="submit" class="btn btn-primary">Save</button>
+    </div>
+}
+<p style="float: left !important;">
+    <a href="@Url.Action("Index", "Home")" class="btn btn-primary">
+        <i class="fa fa-arrow-left"></i>
+    </a>
+</p>
+@section scripts
+{
+    @Scripts.Render("~/bundles/jqueryval")
+}
+
+

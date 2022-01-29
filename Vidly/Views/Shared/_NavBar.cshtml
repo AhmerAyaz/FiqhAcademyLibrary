@@ -1,0 +1,35 @@
+﻿@using System.Web.Mvc;
+@using Vidly.Models;
+<div class="navbar navbar-inverse navbar-fixed-top">
+    <div class="container">
+        <div class="navbar-header">
+            <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+            </button>
+            @Html.ActionLink("لائبریری", "Index", "Home", new { area = "" }, new { @class = "navbar-brand urdu", style = "font-size: 29px;" })
+        </div>
+        <div class="urdu navbar-collapse collapse" style="font-size:22px;">
+            <ul class="nav navbar-nav">
+                @if (User.Identity.IsAuthenticated)
+                {
+                    <li>@Html.ActionLink("نیا  ادھار", "New", "Rentals")</li>
+                    <li>@Html.ActionLink("درخواستیں", "Requests", "Books")</li>
+                }
+                @if (User.IsInRole(RoleName.CanManageMovies))
+                {
+
+                    <li>@Html.ActionLink("کسٹمرز", "Index", "Customers")</li>
+                    <li>@Html.ActionLink("کتابیں", "Index", "Books")</li>
+                }
+                @if (User.Identity.IsAuthenticated)
+                {
+                    <li>@Html.ActionLink("ادھار", "Borrowed", "Books")</li>
+                }
+            </ul>
+            @Html.Partial("_LoginPartial")
+        </div>
+    </div>
+</div>
+

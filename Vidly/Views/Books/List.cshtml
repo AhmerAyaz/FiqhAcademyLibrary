@@ -1,0 +1,763 @@
+﻿@model PagedList.IPagedList<Vidly.Models.Book>
+@using PagedList.Mvc;
+@using System.Web.Mvc;
+@using Vidly.Models;
+<link href="~/Content/PagedList.css" rel="stylesheet" type="text/css" />
+<!--Select2-->
+<link href="https://cdnjs.cloudflare.com/ajax/libs/select2/4.0.3/css/select2.min.css" rel="stylesheet" />
+<script src="https://cdnjs.cloudflare.com/ajax/libs/select2/4.0.3/js/select2.min.js"></script>
+
+@{
+    ViewBag.Title = "Books";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+
+
+
+<div class="ht__bradcaump__area bg-image--6">
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-12">
+                <div class="bradcaump__inner text-center">
+                    <h2 class="bradcaump-title">Products</h2>
+
+                    <nav class="bradcaump-content" role="navigation" aria-label="breadcrumbs">
+                        <ul>
+
+                            <li>
+                                <a class="breadcrumb_item" href="/Books" title="Back to the home page">Home</a>
+                            </li>
+                            <li>
+
+
+
+                                <span>Products</span>
+
+
+
+                            </li>
+                        </ul>
+                    </nav>
+
+
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+<style>
+
+
+    .ht__bradcaump__area {
+        padding-top: 210px;
+        padding-bottom: 110px;
+        background-image: url(../../Content/cdn.shopify.com/s/files/1/0014/4880/4425/files/6_1920xc744.jpg?v=1532496563);
+    }
+
+    .bradcaump__inner .bradcaump-title {
+        color: #ffffff;
+    }
+
+    .bradcaump__inner .bradcaump-content .breadcrumb_item {
+        color: #ffffff;
+    }
+
+    .bradcaump-content li span {
+        color: #e59285;
+    }
+</style>
+
+
+
+
+<main role="main">
+
+    <div id="shopify-section-collection-template" class="shopify-section">
+        <!-- Start Shop Page -->
+        <div class="page-shop-sidebar left--sidebar section-padding--lg">
+            <div class="container">
+                <div class="row flex-row-reverse">
+                    <div class="col-lg-9 col-12">
+
+
+                        <div class="row">
+                            <div class="col-lg-12">
+                                <div class="shop__list__wrapper d-flex flex-wrap flex-md-nowrap justify-content-between">
+
+
+                                    <div class="shop__list nav justify-content-center">
+                                        @using (Html.BeginForm("List", "Books", FormMethod.Get))
+                                        {
+                                            //the following are search options
+                                            
+                                            <select class="chose-author form-control" name="author" style="width:250px;">
+                                                <option>Select Author</option>
+                                            </select>
+                                            <select class="chose-book form-control" name="book" style="width:250px;">
+                                                <option>Select Book</option>
+                                            </select>
+                                            <select class="chose-publisher form-control" name="publisher" style="width:250px;">
+                                                <option>Select Publisher</option>
+                                            </select>
+                                            <input class="btn" type="submit" name="submit" value="Search"/>
+                                        }
+                                        <!--<button class="change-view change-view--active" data-view="grid"><i class="fa fa-th"></i></button>
+    <button class="change-view" data-view="list"><i class="fa fa-list"></i></button>-->
+
+                                    </div>
+
+
+
+
+
+                                  <!--  <div class="orderby__wrapper">
+                                        <label for="SortBy">Sort by</label>
+                                        <select name="SortBy" id="SortBy">
+                                            <option value="manual">Featured</option>
+                                            <option value="best-selling">Best Selling</option>
+                                            <option value="title-ascending">Alphabetically, A-Z</option>
+                                            <option value="title-descending">Alphabetically, Z-A</option>
+                                            <option value="price-ascending">Price, low to high</option>
+                                            <option value="price-descending">Price, high to low</option>
+                                            <option value="created-descending">Date, new to old</option>
+                                            <option value="created-ascending">Date, old to new</option>
+                                        </select>
+                                    </div>-->
+
+
+                                </div>
+
+
+
+
+
+
+
+                                <script>
+                                    /*============================================================================
+                                      Inline JS because collection liquid object is only available
+                                      on collection pages and not external JS files
+                                    ==============================================================================*/
+                                    Shopify.queryParams = {};
+                                    if (location.search.length) {
+                                        for (var aKeyValue, i = 0, aCouples = location.search.substr(1).split('&'); i < aCouples.length; i++) {
+                                            aKeyValue = aCouples[i].split('=');
+                                            if (aKeyValue.length > 1) {
+                                                Shopify.queryParams[decodeURIComponent(aKeyValue[0])] = decodeURIComponent(aKeyValue[1]);
+                                            }
+                                        }
+                                    }
+
+                                    $(function () {
+                                        $('#SortBy')
+                                            .val('title-ascending')
+                                            .bind('change', function () {
+                                                Shopify.queryParams.sort_by = jQuery(this).val();
+                                                location.search = jQuery.param(Shopify.queryParams);
+                                            }
+                                            );
+                                    });
+                                </script>
+
+                            </div>
+                        </div>
+
+
+                        <div class="tab__container">
+
+
+
+                            <div class="shop-grid">
+                                <div class="row">
+
+
+                                    @foreach (var book in Model)
+                                    {
+                                        <div class="col-lg-4 col-md-4 col-sm-6 col-12 match-height-activation">
+                                            <div class="single__product">
+                                                <div class="product product__style--3">
+
+
+
+
+
+
+
+
+
+
+
+                                                    <div class="product__thumb">
+                                                        <a class="first__img" href="/Books/Details?Id=@book.Id&set=1"><img alt="" src="~/Content/cdn.shopify.com/s/files/1/0014/4880/4425/files/slider3.jpg"><div class="centered-text" style="width: 239px;">@book.Name</div></a>
+
+                                                        <a class="second__img animation1" href="/Books/Details?Id=@book.Id&set=1"><img alt="" src="~/Content/cdn.shopify.com/s/files/1/0014/4880/4425/files/slider4.png"><div class="centered-text" style="color:black;">@book.Author</div></a>
+
+
+
+
+                                                        <!--
+                                                                                                                <div class="hot__box">
+                                                                                                                    <span class="hot-label">17 % Off</span>
+
+                                                                                                                </div>
+                                                        -->
+
+
+
+                                                    </div>
+
+                                                    <div class="product__content content--center">
+                                                        <h4><a class="Amiri" style="white-space:normal;" href="javascript:void(0);">@book.Name</a></h4>
+
+
+                                                        <ul class="prize d-flex">
+
+
+                                                            <li><span class=money>@book.Genre.Name</span></li>
+                                                            <!--<li class="old_prize"><span class=money>$600.00</span></li>-->
+
+
+
+                                                        </ul>
+
+
+                                                        <div class="action">
+                                                            <div class="actions_inner">
+                                                                <ul style="height:25px;" class="add_to_links">
+                                                                    <li class="Amiri">@book.Publisher</li>
+                                                                    <!--<li>
+                                                                        <a class="action-cart add_cart cart-item cart" title="" href="javascript:void(0);" onclick="Shopify.addItem(12210158862409, 1); return false;">
+                                                                            <i class="bi bi-shopping-bag4"></i>
+                                                                        </a>
+                                                                    </li>
+
+
+                                                                    <li>
+                                                                        <a class="" href="../account/login.html" title="Wishlist">
+                                                                            <i class="bi bi-heart-beat"></i>
+                                                                        </a>
+                                                                    </li>
+                                                                    <li>
+                                                                        <a href="#" class="compare" data-pid="adquiera-mas" title="" data-original-title="Compare">
+                                                                            <i class="bi bi-compass"></i>
+                                                                        </a>
+                                                                    </li>
+                                                                    <li>
+                                                                        <a data-toggle="modal" data-target="#exampleModal" title="Quick View"
+                                                                           class="quickview modal-view detail-link" href="javascript:void(0);"
+                                                                           onclick="quiqview('adquiera-mas')">
+                                                                            <i class="bi bi-search"></i>
+                                                                        </a>
+                                                                    </li>-->
+
+
+                                                                </ul>
+                                                            </div>
+                                                        </div>
+                                                        <!--
+                                                        <div class="product__hover--content">
+
+                                                            <ul class="rating d-flex spr-badge-caption-none">
+                                                                <span class="shopify-product-reviews-badge" data-id="1323780407369"></span>
+                                                            </ul>
+
+                                                        </div>-->
+
+                                                    </div>
+
+
+
+
+                                                </div>
+                                            </div>
+                                        </div>
+                                    }
+
+                                </div>
+
+                                <ul class="wn__pagination">
+                                    Page @(Model.PageCount < Model.PageNumber ? 0 : Model.PageNumber) of @Model.PageCount
+
+                                    @Html.PagedListPager(Model, pageNumber => Url.Action("List",
+                                        new { pageNumber, publisher = Request.QueryString["publisher"], author = Request.QueryString["author"], search = Request.QueryString["search"], sortOrder = ViewBag.CurrentSort, currentBook = ViewBag.currentBook, currentAuthor = ViewBag.currentAuthor, currentTopic = ViewBag.currentTopic, currentList = ViewBag.listType }))
+                                    <!--
+                                                                        <li>
+
+                                                                        <li class="disabled prev">
+                                                                            <a href="#">
+                                                                                <span><i class="zmdi zmdi-chevron-left" aria-hidden="true"></i></span>
+                                                                            </a>
+                                                                        </li>
+
+
+
+
+                                                                        <li class="active"><a href="#">1</a></li>
+
+
+
+
+                                                                        <li>
+                                                                            <a href="all4658.html?page=2" title="">2</a>
+                                                                        </li>
+
+
+
+                                                                        <li>
+                                                                            <a href="all9ba9.html?page=3" title="">3</a>
+                                                                        </li>
+
+
+
+                                                                        <li>
+                                                                            <a href="allfdb0.html?page=4" title="">4</a>
+                                                                        </li>
+
+
+
+                                                                        <li class="next"><a href="all4658.html?page=2" title="Next &raquo;"><span aria-hidden="true"><i class="zmdi zmdi-chevron-right" aria-hidden="true"></i></span></a></li>
+                                    -->
+                                </ul>
+
+                            </div>
+
+
+                        </div>
+                    </div>
+
+                    <div class="col-lg-3 col-12 order-2 order-lg-1 md-mt-40 sm-mt-40">
+                        <div class="shop__sidebar">
+
+                            <aside class="wedget__categories poroduct--cat">
+
+                                <h3 class="wedget__title">Categories</h3>
+
+                                <ul>
+
+
+                                    <li class=""><a href="adventure.html">(8)<span class="Amiri">أصول الفقه</span></a></li>
+
+                                    <li class="">
+                                        <a href="biographic.html">
+                                            (10)
+                                            <span class="Amiri">أصول تفسیر</span>
+                                        </a>
+                                    </li>
+
+                                    <li class="">
+                                        <a href="children.html">
+                                            (9)
+                                            <span class="Amiri">تفاسیر</span>
+                                        </a>
+                                    </li>
+
+                                    <li class="">
+                                        <a href="christmas-best.html">
+                                            (12)
+                                            <span class="Amiri">لغت</span>
+                                        </a>
+                                    </li>
+
+                                    <li class="">
+                                        <a href="christmas-hot.html">
+                                            (10)
+                                            <span class="Amiri">ألتراجم والطبقات</span>
+                                        </a>
+                                    </li>
+                                    <li class="">
+                                        <a href="adventure.html">
+                                            (8)
+                                            <span class="Amiri">ألرقاق والآداب ولأذكار</span>
+                                        </a>
+                                    </li>
+
+                                    <li class="">
+                                        <a href="biographic.html">
+                                            (10)
+
+                                            <span class="Amiri">فقه</span>
+                                        </a>
+                                    </li>
+
+                                    <li class="">
+                                        <a href="children.html">
+                                            (9)
+
+                                            <span class="Amiri">فقه وفتاوى</span>
+                                        </a>
+                                    </li>
+
+                                    <li class="">
+                                        <a href="christmas-best.html">
+                                            (12)
+
+                                            <span class="Amiri">سیرت</span>
+                                        </a>
+                                    </li>
+
+                                    <li class="">
+                                        <a href="christmas-hot.html">
+                                            (10)
+
+                                            <span class="Amiri">ألأمثال</span>
+                                        </a>
+                                    </li>
+                                    <li class="">
+                                        <a href="adventure.html">
+                                            (8)
+                                            <span class="Amiri">الدعوة وأحوال المسلمين</span>
+                                        </a>
+                                    </li>
+
+                                    <li class="">
+                                        <a href="biographic.html">
+                                            (10)
+
+
+                                            <span class="Amiri">ألسياسة الشرعية والقضاء</span>
+                                        </a>
+                                    </li>
+
+                                    <li class="">
+                                        <a href="children.html">
+                                            (9)
+
+                                            <span class="Amiri">شروح الحديث</span>
+                                        </a>
+                                    </li>
+
+                                    <li class="">
+                                        <a href="christmas-best.html">
+                                            (12)
+
+                                            <span class="Amiri">علوم الحديث</span>
+                                        </a>
+                                    </li>
+
+                                    <li class="">
+                                        <a href="christmas-hot.html">
+                                            (10)
+
+                                            <span class="Amiri">علوم القرآن</span>
+                                        </a>
+                                    </li>
+
+                                    <li class="">
+                                        <a href="christmas-hot.html">
+                                            (10)
+
+
+                                            <span class="Amiri">فقه وأصول الفقه</span>
+                                        </a>
+                                    </li>
+                                    <li class="">
+                                        <a href="adventure.html">
+                                            (8)
+
+                                            <span class="Amiri">فهارس الكتب والفنون</span>
+                                        </a>
+                                    </li>
+
+                                    <li class="">
+                                        <a href="biographic.html">
+                                            (10)
+
+
+
+                                            <span class="Amiri">قواعد الفقهية</span>
+                                        </a>
+                                    </li>
+
+                                    <li class="">
+                                        <a href="children.html">
+
+                                            (9)
+
+                                            <span class="Amiri">متفرق</span>
+                                        </a>
+                                    </li>
+
+                                    <li class="">
+                                        <a href="christmas-best.html">
+                                            (12)
+
+
+                                            <span class="Amiri">متون الحديث</span>
+                                        </a>
+                                    </li>
+
+
+                                </ul>
+                            </aside>
+                            <!--
+
+                            <aside class="wedget__categories poroduct--cat">
+
+                                <h3 class="wedget__title">Vendors</h3>
+
+                                <ul>
+
+
+                                    <li class=""><a href="vendorsa752.html?q=Aurelia">Aurelia</a></li>
+
+                                    <li class=""><a href="vendorsdb2e.html?q=Boighor-demo">Boighor-demo</a></li>
+
+                                    <li class=""><a href="vendors622c.html?q=Creature">Creature</a></li>
+
+                                    <li class=""><a href="vendors105e.html?q=Generic">Generic</a></li>
+
+                                    <li class=""><a href="vendors060f.html?q=Glus">Glus</a></li>
+
+                                </ul>
+                            </aside>
+
+
+                            <aside class="wedget__categories poroduct--cat">
+
+                                <h3 class="wedget__title">Products Types</h3>
+
+                                <ul>
+
+
+
+
+
+                                    <li class=""><a href="types41f9.html?q=English">English</a></li>
+
+
+
+                                    <li class=""><a href="typesaa90.html?q=Math">Math</a></li>
+
+
+
+                                    <li class=""><a href="types214a.html?q=Science">Science</a></li>
+
+
+                                </ul>
+                            </aside>
+
+
+                            <aside class="wedget__categories product-sidebar-color">
+
+                                <h3 class="wedget__title">Color</h3>
+
+                                <ul>
+
+
+
+
+
+
+                                    <li class="red "><a style="background: red no-repeat center; background-size: initial;" href="all/red.html"></a></li>
+
+
+
+
+                                    <li class="green"><a style="background: green no-repeat center; background-size: initial;" href="all/green.html"></a></li>
+
+
+
+
+                                    <li class="blue"><a style="background: blue no-repeat center; background-size: initial;" href="all/blue.html"></a></li>
+
+
+
+
+                                    <li class="white"><a style="background: white no-repeat center; background-size: initial;" href="all/white.html"></a></li>
+
+
+
+
+                                    <li class="yellow "><a style="background: yellow no-repeat center; background-size: initial;" href="all/yellow.html"></a></li>
+
+
+                                </ul>
+                            </aside>
+
+
+                            <aside class="wedget__categories poroduct--cat">
+
+                                <h3 class="wedget__title">Size</h3>
+
+                                <ul>
+
+
+
+
+
+
+                                    <li><a href="all/xl.html">xl</a></li>
+
+
+
+
+                                    <li><a href="all/xs.html">xs</a></li>
+
+
+
+
+                                    <li><a href="all/ml.html">ml</a></li>
+
+
+
+
+                                    <li><a href="all/x.html">X</a></li>
+
+
+
+
+                                    <li><a href="all/m.html">M</a></li>
+
+
+                                </ul>
+                            </aside>
+
+
+                            <aside class="wedget__categories poroduct--tag">
+
+                                <h3 class="wedget__title">Tags</h3>
+
+                                <ul>
+
+
+                                    <li class=""><a href="all/cotton.html">Cotton</a></li>
+
+                                    <li class=""><a href="all/fiber.html">Fiber</a></li>
+
+                                    <li class=""><a href="all/partex.html">Partex</a></li>
+
+                                    <li class=""><a href="all/plastic.html">Plastic</a></li>
+
+                                    <li class=""><a href="all/wood.html">Wood</a></li>
+
+                                    <li class=""><a href="all/wool.html">Wool</a></li>
+
+                                    <li class=""><a href="all/black.html">black</a></li>
+
+                                    <li class=""><a href="all/brown.html">brown</a></li>
+
+                                    <li class=""><a href="all/gray.html">gray</a></li>
+
+                                    <li class=""><a href="all/lg.html">lg</a></li>
+
+                                    <li class=""><a href="all/magenta.html">magenta</a></li>
+
+                                    <li class=""><a href="all/md.html">md</a></li>
+
+                                    <li class=""><a href="all/orange.html">orange</a></li>
+
+                                    <li class=""><a href="all/pink.html">pink</a></li>
+
+                                    <li class=""><a href="all/purple.html">purple</a></li>
+
+                                </ul>
+                            </aside>
+
+
+
+
+                            <aside class="wedget__categories sidebar--banner">
+
+                                <img src="~/Content/cdn.shopify.com/s/files/1/0014/4880/4425/files/banner_left_grande34fc.jpg?v=1532922071" alt="banner images">
+
+
+
+                                <div class="text">
+
+                                    <h2>new products</h2>
+
+
+                                    <h6>save up to <br> <strong>40%</strong> off</h6>
+
+                                </div>
+
+                            </aside>
+                            -->
+
+                        </div>
+
+
+
+                        <script>
+                            $(".shop__sidebar .wedget__categories li.active a").removeAttr("href");
+                        </script>
+
+                    </div>
+
+                </div>
+            </div>
+        </div>
+        <!-- End Shop Page -->
+
+
+
+    </div>
+
+</main>
+<script>
+    $(document).ready(function () {
+
+        $(".chose-author").select2({
+            ajax: {
+                url: '/Books/getAuthors',
+                width: 'resolve',
+                data: function (params) {
+                    return {
+                        q: params.term// search term
+                    };
+                },
+                processResults: function (data) {
+                    return {
+                        results: data.items
+                    };
+                },
+                minimumInputLength: 2,
+                width: 'resolve'
+            }
+        });
+
+        $(".chose-book").select2({
+            ajax: {
+                url: '/Books/getBooks',
+                width: 'resolve',
+                data: function (params) {
+                    return {
+                        q: params.term// search term
+                    };
+                },
+                processResults: function (data) {
+                    return {
+                        results: data.items
+                    };
+                },
+                minimumInputLength: 2,
+                width: 'resolve'
+            }
+        });
+
+        $(".chose-publisher").select2({
+            ajax: {
+                url: '/Books/getPublishers',
+                width: 'resolve',
+                data: function (params) {
+                    return {
+                        q: params.term// search term
+                    };
+                },
+                processResults: function (data) {
+                    return {
+                        results: data.items
+                    };
+                },
+                minimumInputLength: 2,
+                width: 'resolve'
+            }
+        });
+
+    });
+</script>
+
+

@@ -1,0 +1,109 @@
+/* Newsletter PopUp */
+.newsletter_popup_inner{	
+  background: #fff url("../../../files/sdfdsfds9_1024x1024db6c.jpg?v=1567421091") no-repeat;
+  background-size: cover;
+  background-position: center center;
+}
+.subscribe_area > h2 {
+  color: #210e0e;
+}
+.subscribe_area > p {
+  color: #2b0e0e;
+}
+.grid__item h1{
+	color: ;
+}
+.subscribe-form {
+  border: 1px solid #512727;
+  color: #512727;
+}
+.subscribe-form::-webkit-input-placeholder { /* Chrome/Opera/Safari */
+  color: #512727 !important;
+}
+.subscribe-form::-moz-placeholder { /* Firefox 19+ */
+  color: #512727 !important;
+}
+.subscribe-form:-ms-input-placeholder { /* IE 10+ */
+  color: #512727 !important;
+}
+.subscribe-form:placeholder { /* Firefox 18- */
+  color: #512727 !important;
+}
+.newsletter-btn {
+  background: #ec552c none repeat scroll 0 0;
+  color: #ffffff;
+}
+.popup_off{
+  color: #ec552c;
+}
+.newsletter_popup_inner:before {
+  background: #000;
+  opacity: 0;
+}
+/* Breadcurmb Banner */
+.breadcrumbs {
+  background: #f6f6f6 ;
+}
+.overlay-bg::before {
+  background: #f6f6f6 none repeat scroll 0 0;
+  content: "";
+  height: 100%;
+  left: 0;
+  opacity: 0.6;
+  position: absolute;
+  top: 0;
+  transition: all 0.3s ease 0s;
+  width: 100%;
+}
+.breadcrumbs-title {
+  color: #ffffff;
+}
+.breadcrumb-list > li > a {
+  color: #ffffff;
+}
+.breadcrumb-list > li::before {
+  color: #ffffff;
+}
+.breadcrumb-list > li {
+  color: #e59285;
+}
+/* Top Bar Noticfication */
+
+.top-notification-bar {
+	background: #f3f3f3;
+	background: -moz-linear-gradient(left, #f3f3f3 0%, #666666 100%);
+	background: -webkit-gradient(left top, right top, color-stop(0%, #f3f3f3), color-stop(100%, #666666));
+	background: -webkit-linear-gradient(left, #f3f3f3 0%, #666666 100%);
+	background: -o-linear-gradient(left, #f3f3f3 0%, #666666 100%);
+	background: -ms-linear-gradient(left, #f3f3f3 0%, #666666 100%);
+  	background: linear-gradient(to right, #f3f3f3 0%, #666666 100%);
+	filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#f3f3f3', endColorstr='#666666', GradientType=1 );
+}
+
+.notification-entry p a {
+  background-color: #666666;
+  border: 1px solid #666666;
+  color: #ffffff;
+}
+.notification-entry p a:hover {
+  background-color: #999;
+  border: 1px solid #999;
+  color: #fff;
+}
+.notification-close-btn {
+  background-color: ;
+  border: 1px solid #fff;
+  color: #fff;
+}
+.notification-close-btn:hover{
+  background-color: #fff;
+  border: 1px solid #fff;
+  color: #232323;
+}
+
+.notification-entry p {
+  color: #fff;
+}
+.top-notification-bar::before {
+  background: rgba(0, 0, 0, 0.6) none repeat scroll 0 0;
+}

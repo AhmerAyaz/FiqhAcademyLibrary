@@ -1,0 +1,30 @@
+﻿@model Vidly.ViewModels.AdminViewModel
+@{
+    ViewBag.Title = "Home Page";
+}
+
+<div class="jumbotron" style="text-align:center; background:#c98277; color:white;">
+    <h1 class="urdu">فقہ  اکیڈمی  لائبریری</h1>
+    @*<p class="lead">ASP.NET is a free web framework for building great Web sites and Web applications using HTML, CSS and JavaScript.</p>
+    <p><a href="http://asp.net" class="btn btn-primary btn-lg">Learn more &raquo;</a></p>*@
+</div>
+
+<div class="row">
+    <div class="urdu col-md-4 well" style="direction:rtl; text-align:center;">
+        <h2>ادھار  پر  دی  ہوئ  کتابیں</h2>
+        <p style="font-size:xx-large;">@Model.Rentals</p>
+        <p><a class="btn btn-default" href="/Books/Borrowed">ادھار &raquo;</a></p>
+    </div>
+    <div class=" urdu col-md-4 well" style="direction:rtl; text-align:center;">
+        <h2>کتابوں  کی  تعداد</h2>
+        <p style="font-size:xx-large;">
+            @Model.Books
+        </p>
+        <p><a class="btn btn-default" href="/Books">کتابیں &raquo;</a></p>
+    </div>
+    <div class="urdu col-md-4 well" style="direction:rtl; text-align:center;">
+        <h2>درخواستوں  کی  تعداد</h2>
+        <p style="font-size:xx-large;">@Model.Requests</p>
+        <p><a class="btn btn-default" href="/Books/Requests">درخواستیں &raquo;</a></p>
+    </div>
+</div>

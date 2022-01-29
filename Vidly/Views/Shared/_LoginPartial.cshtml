@@ -1,0 +1,48 @@
+﻿@using Microsoft.AspNet.Identity
+@using Vidly.Models
+@if (Request.IsAuthenticated)
+{
+    using (Html.BeginForm("LogOff", "Account", FormMethod.Post, new { id = "logoutForm", @class = "navbar-right" }))
+    {
+    @Html.AntiForgeryToken()
+
+    <ul class="nav navbar-nav navbar-right">
+
+        @if (!User.IsInRole(RoleName.CanManageMovies))
+        {
+            <li class="notifications">
+                <a style="cursor:pointer; height:48px;">
+                    <i class="glyphicon glyphicon-globe"></i>
+                    <span class="js-notifications-count badge hide"></span>
+                </a>
+            </li>
+
+            <li class="dropdown">
+                @Html.ActionLink("Hello " + User.Identity.GetUserName() + "!", "History", "Books", routeValues: null, htmlAttributes: new { @class = "dropbtn", title = "Manage" })
+                <div class="dropdown-content">
+                    <a href="/Books/History" style="text-align:center;">پرانے  ادھار</a>
+                    <a href="/Manage/Index" style="text-align:center;">اکاونٹ  مینج</a>
+                </div>
+            </li>
+        }
+        else
+        {
+            <li>
+                @Html.ActionLink("Hello " + User.Identity.GetUserName() + "!", "Index", "Manage", routeValues: null, htmlAttributes: new { @class = "dropbtn", title = "Manage" })
+            </li>
+        }
+
+
+
+
+        <li><a href="javascript:document.getElementById('logoutForm').submit()">Log off</a></li>
+    </ul>
+    }
+}
+else
+{
+    <ul class="nav navbar-nav navbar-right">
+        <li>@Html.ActionLink("Register", "Register", "Account", routeValues: null, htmlAttributes: new { id = "registerLink" })</li>
+        <li>@Html.ActionLink("Log in", "Login", "Account", routeValues: null, htmlAttributes: new { id = "loginLink" })</li>
+    </ul>
+}
